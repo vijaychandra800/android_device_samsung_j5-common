@@ -94,7 +94,7 @@ AUDIO_FEATURE_ENABLED_FM := true
 TARGET_HW_DISK_ENCRYPTION := true
 
 # Build our own PowerHAL
-#TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
+TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 
 # Wifi
@@ -183,9 +183,9 @@ TARGET_SYSTEM_PROP := device/samsung/j5-common/system.prop
 # Display
 TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+#TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_BRIGHTNESS_PATH := "/sys/devices/soc.0/1a00000.qcom,mdss_mdp/qcom,mdss_fb_primary.138/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_NEW_ION_HEAP := true
 TW_TARGET_USES_QCOM_BSP := true
@@ -195,7 +195,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Storage
 TARGET_RECOVERY_FSTAB := device/samsung/j5-common/rootdir/etc/fstab.qcom
-#TARGET_RECOVERY_FSTAB := device/samsung/j5-common/recovery/twrp.fstab
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"

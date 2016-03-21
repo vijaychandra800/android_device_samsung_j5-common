@@ -156,7 +156,6 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
-    init.target.rc \
     init.class_main.sh \
     init.mdm.sh \
     init.qcom.bms.sh \
@@ -296,12 +295,23 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.sys.usb.default.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
+# Default.prop overrides to get adb working at boot   
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungJ5RIL
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cmnrecovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/cmnrecovery/recovery.fstab:recovery/root/etc/recovery.fstab
+
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
