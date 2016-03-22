@@ -131,6 +131,7 @@ PRODUCT_PACKAGES += \
 # Etc
 PRODUCT_PACKAGES += \
     init.crda.sh \
+    init.qcom.rootagent.sh \
     init.qcom.bt.sh \
     init.qcom.coex.sh \
     hcidump.sh \

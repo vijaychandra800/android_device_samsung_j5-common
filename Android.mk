@@ -15,7 +15,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-SAMSUNG_TARGETS := j5nltexx
+SAMSUNG_TARGETS := a5ultexx a5ltexx
 
 ifneq ($(filter $(SAMSUNG_TARGETS),$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
@@ -61,44 +61,31 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 
-# Keymaster
-KM_IMAGES := \
-    keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
+# MCpay
+MCP_IMAGES := \
+    mcpay.b00 mcpay.b01 mcpay.b02 mcpay.b03 mcpay.mdt
 
-KM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/keymaster/,$(notdir $(KM_IMAGES)))
-$(KM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Keymaster firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/keymaste$(suffix $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(KM_SYMLINKS)
-
-# Kiwi
-KIWI_IMAGES := \
-    kiwi.b00 kiwi.b01 kiwi.b02 kiwi.b03 kiwi.mdt
-
-KIWI_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(KIWI_IMAGES)))
-$(KIWI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "KIWI firmware link: $@"
+MCP_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MCP_IMAGES)))
+$(MCP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MCP firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(KIWI_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(MCP_SYMLINKS)
 
-# Venus
-VEN_IMAGES := \
-    venus.b00 venus.b01 venus.b02 venus.b03 venus.b04 venus.mdt
+# MLdap
+MLD_IMAGES := \
+    mldap.b00 mldap.b01 mldap.b02 mldap.b03 mldap.mdt
 
-VEN_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(VEN_IMAGES)))
-$(VEN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "VEN firmware link: $@"
+MLD_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MLD_IMAGES)))
+$(MLD_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MCP firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(VEN_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(MLD_SYMLINKS)
 
 # Modem
 MODEM_IMAGES := \
@@ -157,8 +144,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(REACT_SYMLINKS)
 
 # SKM
 SKM_IMAGES := \
-    skm.b00 skm.b01 skm.b02 skm.b03 skm.mdt \
-    skmm_ta.b00 skmm_ta.b01 skmm_ta.b02 skmm_ta.b03 skmm_ta.mdt
+    skm.b00 skm.b01 skm.b02 skm.b03 skm.mdt
 
 SKM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SKM_IMAGES)))
 $(SKM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
