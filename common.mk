@@ -165,7 +165,6 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    init.rc \
     init.rilchip.rc \
     init.rilcommon.rc \
     init.target.rc \
