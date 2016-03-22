@@ -174,7 +174,6 @@ PRODUCT_PACKAGES += \
     publiccert.pem \
     ueventd.qcom.rc \
     ueventd.rc \
-    verity_key
 
 # USB
 PRODUCT_PACKAGES += \
