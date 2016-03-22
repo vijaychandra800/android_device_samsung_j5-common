@@ -153,11 +153,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.rc \
-    init.trace.rc \
-    init.usb.rc \
     init.target.rc \
-    init.carrier.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     ueventd.qcom.rc \
