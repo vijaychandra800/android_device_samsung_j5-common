@@ -153,10 +153,28 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.power.rc \
+    init.carrier.rc \
+    init.class_main.sh \
+    init.mdm.sh \
+    init.qcom.bms.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.factory.sh \
     init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.rc \
+    init.rilchip.rc \
+    init.rilcommon.rc \
+    init.target.rc \
+    init.trace.rc \
+    init.usb.rc \
+    publiccert.pem \
     ueventd.qcom.rc \
+    ueventd.rc \
+    verity_key
 
 # USB
 PRODUCT_PACKAGES += \
