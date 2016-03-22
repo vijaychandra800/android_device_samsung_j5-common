@@ -33,12 +33,50 @@ on early-init
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
 
-# import cne init file
-#on post-fs
-#    export LD_PRELOAD /vendor/lib/libNimsWrap.so
-
 on fs
     mount_all fstab.qcom
+
+    # Keeping following partitions outside fstab file. As user may not have
+    # these partition flashed on the device. Failure to mount any partition in fstab file
+    # results in failure to launch late-start class.
+
+    wait /dev/block/bootdevice/by-name/cache
+    check_fs /dev/block/bootdevice/by-name/cache ext4
+    mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+
+    wait /dev/block/bootdevice/by-name/persist
+    check_fs /dev/block/bootdevice/by-name/persist ext4
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+    mkdir /persist/data 0700  system system
+    restorecon_recursive   /persist
+
+    wait /dev/block/bootdevice/by-name/efs
+    check_fs /dev/block/bootdevice/by-name/efs ext4
+    mount ext4 /dev/block/bootdevice/by-name/efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+    chown system radio /efs
+    chmod 0771 /efs
+    rm -rf /efs/dmverity
+    restorecon -R /efs
+	
+on fs_sec_selinux
+	
+	wait /dev/block/bootdevice/by-name/apnhlos
+    mount vfat /dev/block/bootdevice/by-name/apnhlos /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware:s0
+
+	wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware-modem ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware:s0
+
+	
+on fs_selinux
+
+    wait /dev/block/bootdevice/by-name/apnhlos
+    mount vfat /dev/block/bootdevice/by-name/apnhlos /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+    
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware-modem ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+
+	
+    #write /sys/kernel/boot_adsp/boot 1
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -48,7 +86,7 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
-    mkdir /data/misc/dts 0770 media audio
+
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class main
@@ -59,13 +97,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 on property:ro.config.zram=true
     swapon_all fstab.qcom
     write /proc/sys/vm/swappiness 100
-
-#start gpu_snapshotd for gpu hang issue debugging
-service gpu_snapshotd /system/bin/gpu_snapshotd -s /sys/class/kgsl/kgsl-3d0/snapshot -d /data/log/ -m 0700
-    class late_start
-    user system
-    group system  
-
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -138,7 +169,7 @@ on boot
 #    class late_start
 #    disabled
 #    user system
-#   socket pps stream 0660 system system
+#    socket pps stream 0660 system system
 #    group system graphics
 
 #on property:init.svc.surfaceflinger=stopped
@@ -180,6 +211,11 @@ service imsdatadaemon /system/bin/imsdatadaemon
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
+service qmi_sfs_server /system/bin/qmi_sfs_server
+   class core
+   user system
+   group system net_raw
+
 service ims_rtp_daemon /system/bin/ims_rtp_daemon
    class main
    user system
@@ -187,18 +223,34 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
    group radio net_raw diag qcom_diag log
    disabled
 
-service imscmservice /system/bin/imscmservice
-   class main
-   user system
-   group radio net_raw diag qcom_diag log
-   disabled
-
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
-    start imscmservice
 
-service dts_configurator /system/bin/dts_configurator
-   class main
-   user system
-   group system
-   oneshot
+# Secure Storage startup
+service secure_storage /system/bin/secure_storage_daemon
+    class core
+    user system
+    group system
+    disabled
+
+on property:ro.securestorage.support=true
+    mkdir /dev/.secure_storage
+    chmod 0711 /dev/.secure_storage
+    chown system system /dev/.secure_storage
+    restorecon -R /dev/.secure_storage
+    start secure_storage
+
+on property:ro.securestorage.knox=true
+    mkdir /dev/.secure_storage
+    chmod 0711 /dev/.secure_storage
+    chown system system /dev/.secure_storage
+    restorecon -R /dev/.secure_storage
+    start secure_storage
+
+# SecEDS
+service TvoutService_C /system/bin/bintvoutservice
+    class main
+    user system
+    group graphics
+on property:ro.SecEDS.enable=false
+    stop TvoutService_C
