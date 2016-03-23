@@ -168,11 +168,8 @@ PRODUCT_PACKAGES += \
     init.rilchip.rc \
     init.rilcommon.rc \
     init.target.rc \
-    init.trace.rc \
-    init.usb.rc \
     publiccert.pem \
-    ueventd.qcom.rc \
-    ueventd.rc \
+    ueventd.qcom.rc
 
 # USB
 PRODUCT_PACKAGES += \
