@@ -202,6 +202,7 @@ vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libSHIMDivxDrm.so
+vendor/lib/libHevcSwDecoder.so
 
 # Perf
 bin/perfd
