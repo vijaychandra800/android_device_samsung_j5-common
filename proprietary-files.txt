@@ -271,7 +271,6 @@ bin/ssr_setup
 bin/subsystem_ramdump
 lib/libhdcp2.so
 lib/libatparser.so
-lib/modules/pronto/pronto_wlan.ko
 
 # Firmware
 etc/firmware/Signedrompatch_v30.bin
