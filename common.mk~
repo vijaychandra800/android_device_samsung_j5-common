@@ -158,7 +158,6 @@ PRODUCT_PACKAGES += \
     fibmap.f2fs \
     fsck.f2fs
 
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/f2fs/format-system.sh:system/extras/format-system.sh
 

@@ -155,8 +155,7 @@ PRODUCT_PACKAGES += \
     e2fsck \
     mkfs.f2fs \
     fsck.f2fs \
-    fibmap.f2fs \
-    fsck.f2fs
+    fibmap.f2fs
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/f2fs/format-system.sh:system/extras/format-system.sh
