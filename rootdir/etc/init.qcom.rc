@@ -73,8 +73,8 @@ on init
     symlink /storage/usbdisk /mnt/usbdisk
 
 on fs
+    exec /sbin/ext/busybox sh /fscheck.sh
     mount_all fstab.qcom
-
     chown system radio /efs
     chmod 0771 /efs
     rm -rf /efs/dmverity
