@@ -69,7 +69,10 @@ on init
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /storage/sdcard1 /extSdCard
     symlink /storage/sdcard1 /mnt/extSdCard
+    symlink /storage/sdcard1 /external_sd
+    symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
 on fs
@@ -168,8 +171,8 @@ on boot
 
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
     # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
+    write /proc/sys/net/core/rmem_max  2097152
+    write /proc/sys/net/core/wmem_max  2097152
 
     # To allow interfaces to get v6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
@@ -376,8 +379,8 @@ on boot
     chmod 0660 /sys/class/host_notify/usb_otg/booster
 
     # GPIO keys
-    chmod 0660 /sys/class/input/input7/enabled
-    chown system system /sys/class/input/input7/enabled
+    chmod 0660 /sys/class/input/input9/enabled
+    chown system system /sys/class/input/input9/enabled
 
     # Access permission for secure touch
     chmod 0660 /sys/devices/soc.0/78b9000.i2c/i2c-5/5-0020/secure_touch_enable
@@ -509,9 +512,6 @@ on post-fs-data
     # Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
-    #Create folder for mm-qcamera-daemon
-    mkdir /data/camera 0770 media camera
-
     # Create PERFD deamon related dirs
     mkdir /data/misc/perfd 0755 root system
     chmod 2755 /data/misc/perfd
@@ -571,15 +571,6 @@ on post-fs-data
     chmod 0775 /efs/.files/.dx1
     chmod 0775 /efs/.files/.dm33
     chmod 0775 /efs/.files/.mp301
-
-    # DCT(Display Clock Tunning)	- Interface 2.0
-    chown radio system /sys/class/dct/dct_node/data
-    chown radio system /sys/class/dct/dct_node/state
-    chown radio system /sys/class/dct/dct_node/log
-    chown radio system /sys/class/dct/dct_node/enabled
-    chown radio system /sys/class/dct/dct_node/interface
-    chown radio system /sys/class/dct/dct_node/libname
-    chown radio system /sys/class/dct/dct_node/tunned
 
     setprop vold.post_fs_data_done 1
 
