@@ -157,9 +157,6 @@ PRODUCT_PACKAGES += \
     fsck.f2fs \
     fibmap.f2fs
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/f2fs/format-system.sh:system/extras/format-system.sh
-
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapers \
