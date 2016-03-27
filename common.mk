@@ -136,9 +136,6 @@ PRODUCT_PACKAGES += \
     init.qcom.coex.sh
 
 PRODUCT_PACKAGES += \
-    blkid \
-    busybox \
-    fscheck.sh \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.power.rc \
