@@ -199,6 +199,9 @@ TW_TARGET_USES_QCOM_BSP := true
 # Keys
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# MTP
+BOARD_MTP_DEVICE := "/dev/usb_mtp_gadget"
+
 # Storage
 TARGET_RECOVERY_FSTAB := device/samsung/j5-common/rootdir/etc/fstab.qcom
 TW_INTERNAL_STORAGE_PATH := "/data/media"
@@ -206,7 +209,7 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_NO_USB_STORAGE := true
-TW_MTP_DEVICE := /dev/usb_mtp_gadget
+TW_MTP_DEVICE := "/dev/mtp_usb"
 RECOVERY_SDCARD_ON_DATA := true
 
 # Misc.
