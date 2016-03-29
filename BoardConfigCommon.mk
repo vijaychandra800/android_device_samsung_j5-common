@@ -200,7 +200,7 @@ TW_TARGET_USES_QCOM_BSP := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 #MTP
-BOARD_USB_MTP_DEVICE := /dev/usb_mtp_gadget
+BOARD_USB_MTP_DEVICE := /dev/mtp_usb
 
 # Storage
 #TARGET_RECOVERY_FSTAB := device/samsung/j5-common/recovery/twrp.fstab
@@ -210,7 +210,7 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_NO_USB_STORAGE := true
-TW_MTP_DEVICE := "/dev/usb_mtp_gadget"
+TW_MTP_DEVICE := "/dev/mtp_usb"
 RECOVERY_SDCARD_ON_DATA := true
 #RECOVERY_VARIANT := twrp
 
