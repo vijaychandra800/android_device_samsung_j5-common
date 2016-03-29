@@ -199,9 +199,6 @@ TW_TARGET_USES_QCOM_BSP := true
 # Keys
 BOARD_HAS_NO_SELECT_BUTTON := true
 
-#MTP
-BOARD_USB_MTP_DEVICE := /dev/mtp_usb
-
 # Storage
 #TARGET_RECOVERY_FSTAB := device/samsung/j5-common/recovery/twrp.fstab
 TARGET_RECOVERY_FSTAB := device/samsung/j5-common/rootdir/etc/fstab.qcom
