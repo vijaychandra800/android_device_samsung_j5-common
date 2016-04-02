@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2012, The Linux Foundation. All rights reserved.
+#Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,9 +26,16 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-country=`getprop wlan.crda.country`
-# crda takes input in COUNTRY environment variable
-if [ $country != "" ]
-then
-COUNTRY="$country" /system/bin/crda
-fi
+LOG_DIR="/data/hcidump/"
+LOG_TAG="hcidump"
+LOG_FILE=`date +%Y%m%d%H%M%S`.cfa
+
+logv ()
+{
+  /system/bin/log -t $LOG_TAG -p v "$LOG_NAME $@"
+}
+
+mkdir $LOG_DIR
+logv "Starting hcidump to $LOG_DIR$LOG_FILE"
+/system/xbin/hcidump -xw $LOG_DIR$LOG_FILE &
+/system/bin/logwrapper /system/xbin/hcidump -xt

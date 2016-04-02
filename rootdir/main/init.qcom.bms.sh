@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2009-2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,9 +26,24 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-country=`getprop wlan.crda.country`
-# crda takes input in COUNTRY environment variable
-if [ $country != "" ]
-then
-COUNTRY="$country" /system/bin/crda
-fi
+target=`getprop ro.board.platform`
+
+start_vm_bms()
+{
+	if [ -e /dev/vm_bms ]; then
+		chown -h root.system /sys/class/power_supply/bms/current_now
+		chown -h root.system /sys/class/power_supply/bms/voltage_ocv
+		chmod 0664 /sys/class/power_supply/bms/current_now
+		chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+		start vm_bms
+	fi
+}
+
+case "$target" in
+    "msm8916")
+        start_vm_bms
+        ;;
+    "msm8909")
+        start_vm_bms
+        ;;
+esac

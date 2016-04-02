@@ -129,17 +129,43 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Configuration scripts
+PRODUCT_PACKAGES += \
+    hcidump.sh \
+    hsic.control.bt.sh \
+    init.ath3k.bt.sh \
+    init.crda.sh \
+    init.qcom.audio.sh \
+    init.qcom.bt.sh \
+    init.qcom.coex.sh \
+    init.qcom.debug.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.fm.sh \
+    init.qcom.modem_links.sh \
+    init.qcom.sdio.sh \
+    init.qcom.uicc.sh \
+    init.qcom.wifi.sh \
+    init.qcom.zram.sh
+
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh \
-    init.qcom.coex.sh
-
-PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.carrier.rc \
+    init.class_main.sh \
+    init.mdm.sh \
+    init.qcom.bms.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.factory.sh \
     init.qcom.rc \
     init.qcom.power.rc \
+    init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.rilchip.rc \
+    init.rilcommon.rc \
+    init.target.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 

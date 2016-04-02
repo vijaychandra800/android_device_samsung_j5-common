@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2012, The Linux Foundation. All rights reserved.
+# Copyright (c) 2014, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -25,10 +25,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+# The script will check total_ram and enable zram for devices with total_ram
+# less or equals to 1GB
 
-country=`getprop wlan.crda.country`
-# crda takes input in COUNTRY environment variable
-if [ $country != "" ]
-then
-COUNTRY="$country" /system/bin/crda
+MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+MemTotal=${MemTotalStr:16:8}
+ZRAM_THRESHOLD=1048576
+IsLowMemory=0
+((IsLowMemory=MemTotal<ZRAM_THRESHOLD?1:0))
+if [ $IsLowMemory -eq 1 ]; then
+    setprop ro.config.zram true
 fi
