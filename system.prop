@@ -31,14 +31,10 @@ ro.opengles.version=196608
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
-tunnel.audio.encode=false
-av.offload.enable=true
+tunnel.audio.encode = false
+audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
-av.streaming.offload.enable=true
-audio.offload.buffer.size.kb=64
-audio.offload.gapless.enabled=true
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
+av.offload.enable=false
 use.voice.path.for.pcm.voip=true
 ro.fm.transmitter=false
 af.resampler.quality=4
