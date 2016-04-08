@@ -71,6 +71,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
 
 # NFC
 BOARD_HAVE_NFC := true
+BOARD_NFC_CHIPSET := pn547
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
