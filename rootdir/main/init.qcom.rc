@@ -67,6 +67,9 @@ on early-boot
     write /sys/module/pil_msa/parameters/modem_auth_timeout_ms ${persist.sys.modem_auth_timeout}
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
+    
+    chown bluetooth net_bt_stack /dev/ttyHS0
+    chmod 0660 /dev/ttyHS0
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -90,6 +93,32 @@ on boot
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
+    
+    # permission for Input Device(Touchkey).
+    chown radio system /sys/class/sec/sec_touchkey/glove_mode
+    chown radio system /sys/class/sec/sec_touchkey/touchkey_firm_update
+
+# Audio NXP
+    chmod 0660 /dev/i2c-1
+    chown system system /dev/i2c-1
+
+# permissions for bluetooth.
+    setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
+    chown bluetooth net_bt_stack ro.bt.bdaddr_path
+    chown radio net_bt_stack /efs/bluetooth/bt_addr
+    chmod 0640 /efs/bluetooth/bt_addr
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+
+# NFC : permission for NFC
+	chmod 0660 /dev/pn547
+# NFC : change owner
+	chown nfc nfc /dev/pn547
+
+# IPSec for VOLTE
+    chown root system /dev/socket
+    chmod 0775 /dev/socket
 
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
