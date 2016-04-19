@@ -55,10 +55,7 @@ persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=none
 ro.qc.sdk.audio.ssr=false
-tunnel.decode=true
-tunnel.audio.encode=true
-tunnel.audiovideo.decode=true
-use.dedicated.device.for.voip=true
+tunnel.audio.encode=false
 use.voice.path.for.pcm.voip=true
 
 # Media
