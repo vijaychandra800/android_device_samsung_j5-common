@@ -155,6 +155,31 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+    
+    service DR-daemon /system/bin/ddexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service SMD-daemon /system/bin/smdexe
+    class main
+    user root
+    group system radio inet net_raw
+
+service BCS-daemon /system/bin/connfwexe
+    class main
+    user root
+    group system radio inet net_raw
+
+# for ethernet
+service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+    class main
+    disabled
+    oneshot
+
+# for Wi-Fi only models
+on property:ro.radio.noril=yes
+stop ril-daemon
 
     setprop wifi.interface wlan0
 
