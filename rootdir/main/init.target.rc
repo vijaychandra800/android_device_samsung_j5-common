@@ -88,10 +88,6 @@ service diag_uart_log /system/bin/diag_uart_log
     user root
     group radio
 
-# fm_radio
-    chmod 0640 /dev/radio0
-    chown system system /dev/radio0
-
 # Kickstart the Wireless subsystem
 write /dev/wcnss_wlan 1
 write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
