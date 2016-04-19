@@ -44,6 +44,69 @@ on fs
     rm -rf /efs/dmverity
     restorecon -R /efs
 
+# efs
+    mkdir /efs/drm 0700 system system
+    mkdir /efs/imei 0775 radio radio
+    restorecon -R /efs
+
+#For Absolute Persistence Partition
+
+    mkdir /persdata 0755 system system
+    mkdir /persdata/absolute 0750 system system
+
+    wait /dev/block/bootdevice/by-name/persdata
+    check_fs /dev/block/bootdevice/by-name/persdata ext4
+    mount ext4 /dev/block/bootdevice/by-name/persdata /persdata/absolute nosuid nodev barrier=1
+
+    chown system system /persdata
+    chmod 0755 /persdata
+    chown system system /persdata/absolute
+    chmod 0750 /persdata/absolute
+
+# fm_radio
+    chmod 0640 /dev/radio0
+    chown system system /dev/radio0
+
+# Permissions for svc led
+    chown system system /sys/class/sec/led/led_r
+    chown system system /sys/class/sec/led/led_g
+    chown system system /sys/class/sec/led/led_b
+    chown system system /sys/class/sec/led/led_pattern
+    chown system system /sys/class/sec/led/led_blink
+    chown system system /sys/class/sec/led/led_lowpower
+
+# permissions for uartsel & usbsel sysfs
+    chmod 0660 /sys/class/sec/switch/uart_en
+    chmod 0660 /sys/class/sec/switch/uart_sel
+    chmod 0660 /sys/class/sec/switch/usb_sel
+    chown system system /sys/class/sec/switch/uart_en
+    chown system system /sys/class/sec/switch/uart_sel
+    chown system system /sys/class/sec/switch/usb_sel
+
+service diag_uart_log /system/bin/diag_uart_log
+    class main
+    user root
+    group radio
+
+# fm_radio
+    chmod 0640 /dev/radio0
+    chown system system /dev/radio0
+
+# Kickstart the Wireless subsystem
+write /dev/wcnss_wlan 1
+write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
+service ftm_ptt /system/bin/ftm_ptt -d
+    user root
+    group radio system
+    disabled
+
+# IPSec for VOLTE
+service ipsec-daemon /system/bin/IPSecService
+    class main
+    socket ipsec_socket stream 660 system system
+    user system
+    group system net_raw inet net_admin
+
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
@@ -62,7 +125,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 #enable zram
 on property:ro.config.zram=true
     swapon_all fstab.qcom
-    write /proc/sys/vm/swappiness 50
+    write /proc/sys/vm/swappiness 100
 
 #start gpu_snapshotd for gpu hang issue debugging
 service gpu_snapshotd /system/bin/gpu_snapshotd -s /sys/class/kgsl/kgsl-3d0/snapshot -d /data/log/ -m 0700
