@@ -12,7 +12,6 @@ persist.radio.use_se_table_only=1
 persist.radio.jbims=1
 persist.radio.multisim.config=none
 telephony.lteOnGsmDevice=1
-persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 
