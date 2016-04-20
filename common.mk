@@ -23,6 +23,10 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/j5-common/overlay
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
@@ -110,19 +114,13 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
-    libdashplayer \
-    qcmediaplayer
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+    libstagefrighthw
 
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
     FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+    libfm_jni
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -151,7 +149,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.carrier.rc \
     init.class_main.sh \
     init.mdm.sh \
     init.qcom.bms.sh \
@@ -164,8 +161,6 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    init.rilchip.rc \
-    init.rilcommon.rc \
     init.target.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
@@ -216,6 +211,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
+    
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
+ifeq ($(BOARD_USES_QCNE),true)
+PRODUCT_PROPERTY_OVERRIDES +=
+    persist.cne.feature=4
+endif
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
