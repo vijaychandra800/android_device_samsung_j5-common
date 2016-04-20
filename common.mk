@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+    
+ifneq ($(QCPATH),)
+PRODUCT_PACKAGES += libOmxVdecHevc
+endif
 
 # FM
 PRODUCT_PACKAGES += \
