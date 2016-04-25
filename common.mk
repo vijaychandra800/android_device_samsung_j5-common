@@ -124,7 +124,7 @@ endif
 PRODUCT_PACKAGES += \
     FM2 \
     FMRecord \
-    libfm_jni
+    libqcomfm_jni
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -215,15 +215,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
-    
-# Connectivity Engine support
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig
-
-ifeq ($(BOARD_USES_QCNE),true)
-PRODUCT_PROPERTY_OVERRIDES +=
-    persist.cne.feature=4
-endif
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
