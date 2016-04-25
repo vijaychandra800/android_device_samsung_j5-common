@@ -305,7 +305,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SamsungJ5RIL
+    ro.telephony.ril_class=J5DSRIL
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
