@@ -15,7 +15,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-SAMSUNG_TARGETS := j5nltexx j5ltexx
+SAMSUNG_TARGETS := j5nltexx
 
 ifneq ($(filter $(SAMSUNG_TARGETS),$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
@@ -153,17 +153,17 @@ $(SKM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(SKM_SYMLINKS)
 
 # SKMM
-SKMM_TA_IMAGES := \
+SKMMTA_IMAGES := \
     skmm_ta.b00 skmm_ta.b01 skmm_ta.b02 skmm_ta.b03 skmm_ta.mdt
 
-SKMM_TA_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SKMM_TA_IMAGES)))
-$(SKMM_TA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+SKMMTA_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(SKMMTA_IMAGES)))
+$(SKMMTA_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "SKMM firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(SKMM_TA_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(SKMMTA_SYMLINKS)
 
 # SSHDcap
 SSHDCPAP_IMAGES := \
