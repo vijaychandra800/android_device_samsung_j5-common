@@ -112,13 +112,10 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxVdecHevc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
-    
-ifneq ($(QCPATH),)
-PRODUCT_PACKAGES += libOmxVdecHevc
-endif
 
 # FM
 PRODUCT_PACKAGES += \
