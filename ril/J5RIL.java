@@ -85,7 +85,7 @@ import java.util.Random;
  *
  * {@hide}
  */
-public class SamsungJ5RIL extends RIL implements CommandsInterface {
+public class J5RIL extends RIL implements CommandsInterface {
 
     private static final int RIL_REQUEST_DIAL_EMERGENCY = 10016;
     private static final int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 1036;
@@ -99,7 +99,7 @@ public class SamsungJ5RIL extends RIL implements CommandsInterface {
 
     private AudioManager mAudioManager;
 
-    public SamsungJ5RIL(Context context, int networkMode, int cdmaSubscription,Integer instanceId) {
+    public J5RIL(Context context, int networkMode, int cdmaSubscription,Integer instanceId) {
         super(context, networkMode, cdmaSubscription,  instanceId);
         mAudioManager = (AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
         mQANElements = 6;
