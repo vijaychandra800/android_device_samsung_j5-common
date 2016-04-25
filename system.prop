@@ -114,11 +114,10 @@ persist.rild.nitz_short_ons_2=""
 persist.rild.nitz_short_ons_3=""
 
 # GPS
-persist.gps.qmienabled=true
 persist.gps.qc_nlp_in_use=1
-ro.qc.sdk.izat.premium_enabled=0
-ro.qc.sdk.izat.service_mask=0x0
+persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
+ro.pip.gated=0
 
 # WFD
 persist.debug.wfd.enable=1
