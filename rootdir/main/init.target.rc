@@ -43,6 +43,8 @@ on fs
     chmod 0771 /efs
     rm -rf /efs/dmverity
     restorecon -R /efs
+    
+    setprop ro.crypto.fuse_sdcard true
 
 # efs
     mkdir /efs/drm 0700 system system
