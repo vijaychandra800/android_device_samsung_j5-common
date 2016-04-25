@@ -1,5 +1,5 @@
-Samsung Galaxy J5
-================= 
+Device tree for Samsung Galaxy J5
+=================================
 
 Basic   | Spec Sheet
 -------:|:-------------------------
