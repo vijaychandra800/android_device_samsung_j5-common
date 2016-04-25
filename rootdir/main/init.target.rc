@@ -83,11 +83,6 @@ on fs
     chown system system /sys/class/sec/switch/uart_sel
     chown system system /sys/class/sec/switch/usb_sel
 
-service diag_uart_log /system/bin/diag_uart_log
-    class main
-    user root
-    group radio
-
 # Kickstart the Wireless subsystem
 write /dev/wcnss_wlan 1
 write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
@@ -127,8 +122,7 @@ on property:ro.config.zram=true
 service gpu_snapshotd /system/bin/gpu_snapshotd -s /sys/class/kgsl/kgsl-3d0/snapshot -d /data/log/ -m 0700
     class late_start
     user system
-    group system  
-
+    group system
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
