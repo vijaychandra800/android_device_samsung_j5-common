@@ -8,7 +8,7 @@
     "target_path": "device/samsung/qcom-common"
   },
   {
-    "repository": "android_kernel_samsung_j5nlte",
+    "repository": "kernel_samsung_j5lte",
     "target_path": "kernel/samsung/j5nlte"
   },
   {
