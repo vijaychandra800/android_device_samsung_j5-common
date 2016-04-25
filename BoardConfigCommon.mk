@@ -66,9 +66,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-# RIL
-TARGET_RIL_VARIANT := caf
-
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
 
@@ -164,9 +161,6 @@ OVERRIDE_RS_DRIVER := libRSDriver.so
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
-
-# Video
-TARGET_HAVE_SIGNED_VENUS_FW := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
