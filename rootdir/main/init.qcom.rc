@@ -104,7 +104,7 @@ on boot
     chown radio system /sys/class/sec/sec_touchkey/touchkey_firm_update
 
 # Audio NXP
-    chmod 0660 /dev/i2c-1
+    chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
 
 # permissions for bluetooth.
@@ -143,8 +143,8 @@ on boot
     chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
-    
-    service ril-daemon /system/bin/rild
+
+service ril-daemon /system/bin/rild
     class main
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
@@ -152,38 +152,11 @@ on boot
     user root
     group radio cache inet misc audio log qcom_diag system drmrpc vpn system
 
-service diag_uart_log /system/bin/diag_uart_log
-    class main
-    user root
-    group radio
-
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps qcom_diag
-
-service diag_mdlog_start /system/bin/diag_mdlog
-    class late_start
-    user sdcard_rw
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service diag_mdlog_stop /system/bin/diag_mdlog -k
-    class late_start
-    user sdcard_rw
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service ril-daemon2 /system/bin/rild -c 2
-    class main
-    socket rild2 stream 660 root radio
-    socket rild-debug2 stream 660 radio system
-    user root
-    group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
-    disabled
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
@@ -224,12 +197,10 @@ stop ril-daemon
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.wifi    524288,2097152,4194304,262144,524288,1048576
 
-
     setprop ro.telephony.call_ring.multiple false
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -456,7 +427,7 @@ stop ril-daemon
     chown system radio /sys/class/sensors/sensor_dev/flush
 
 # Permissions for Charging
-	mkdir /efs/Battery 0775 radio system
+    mkdir /efs/Battery 0775 radio system
     chown system radio /sys/class/power_supply/battery/batt_reset_soc
     chown system radio /sys/class/power_supply/battery/update
     chown system radio /sys/class/power_supply/battery/factory_mode
@@ -622,11 +593,6 @@ on post-fs-data
     chown radio system /sys/class/dct/dct_node/interface
     chown radio system /sys/class/dct/dct_node/libname
     chown radio system /sys/class/dct/dct_node/tunned
-
-#service qcomsysd /system/bin/qcom-system-daemon
-#    class main
-#    user root
-#    group root qcom_diag
 
 service ssr_setup /system/bin/ssr_setup
     oneshot
@@ -1258,20 +1224,6 @@ on property:sys.qbcharger.enable=true
 
 on property:sys.qbcharger.enable=false
     stop qbcharger
-
-service diag_mdlog_start /system/bin/diag_mdlog
-    class late_start
-    user shell
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service diag_mdlog_stop /system/bin/diag_mdlog -k
-    class late_start
-    user shell
-    group system qcom_diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
 
 service qlogd /system/xbin/qlogd
     socket qlogd stream 0662 system system
