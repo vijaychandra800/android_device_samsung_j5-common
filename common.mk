@@ -120,7 +120,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2 \
     FMRecord \
-    libqcomfm_jni
+    libqcomfm_jni \
+    qcom.fmradio
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -202,7 +203,6 @@ PRODUCT_PACKAGES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc_nci \
-    nfc_nci.msm8916 \
     NfcNci \
     Tag \
     com.android.nfc_extras
