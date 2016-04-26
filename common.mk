@@ -114,7 +114,9 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libdashplayer \
+    qcmediaplayer
 
 # FM
 PRODUCT_PACKAGES += \
