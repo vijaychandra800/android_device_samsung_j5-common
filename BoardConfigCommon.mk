@@ -29,7 +29,6 @@ LOCAL_PATH := device/samsung/j5-common
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Arch
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -66,9 +65,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-# Custom RIL class
-BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
-
 # NFC
 BOARD_HAVE_NFC := true
 BOARD_NFC_CHIPSET := pn547
@@ -81,7 +77,17 @@ MALLOC_IMPL := dlmalloc
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+TARGET_USES_QCOM_MM_AUDIO := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+
+# QCRIL
+TARGET_RIL_VARIANT := caf
+
+# Custom RIL class
+BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
+
+#PowerHAL
+TARGET_POWERHAL_VARIANT := qcom
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -93,9 +99,6 @@ AUDIO_FEATURE_ENABLED_FM := true
 
 # Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
-
-#PowerHAL
-TARGET_POWERHAL_VARIANT := qcom
 
 # Wifi
 BOARD_HAS_QCOM_WLAN 		 := true
@@ -145,6 +148,8 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 # Qualcomm support
 BOARD_USES_QC_TIME_SERVICES := true
 BOARD_USES_QCOM_HARDWARE := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
+TARGET_LDPRELOAD := libNimsWrap.so
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT := caf
