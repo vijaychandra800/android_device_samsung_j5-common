@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     libnfc_nci \
-    nfc_nci.msm8916
+    nfc_nci.msm8916 \
     NfcNci \
     Tag \
     com.android.nfc_extras
