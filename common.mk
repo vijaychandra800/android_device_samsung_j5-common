@@ -163,13 +163,11 @@ PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.factory.sh \
     init.qcom.rc \
-    init.qcom.power.rc \
     init.qcom.sh \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.target.rc \
-    init.recovery.qcom.rc \
     ueventd.qcom.rc
 
 # USB
