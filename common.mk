@@ -116,12 +116,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
-    
-# Config files for hostapd
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/configs/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/configs/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
 
 # FM
 PRODUCT_PACKAGES += \
