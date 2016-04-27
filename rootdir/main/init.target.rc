@@ -84,6 +84,11 @@ on fs
     chown system system /sys/class/sec/switch/uart_en
     chown system system /sys/class/sec/switch/uart_sel
     chown system system /sys/class/sec/switch/usb_sel
+    
+service diag_uart_log /system/bin/diag_uart_log
+    class main
+    user root
+    group radio
 
 # Kickstart the Wireless subsystem
 write /dev/wcnss_wlan 1
