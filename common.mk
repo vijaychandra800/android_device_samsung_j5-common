@@ -253,12 +253,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/configs/somxreg.conf:system/etc/somxreg.conf
 
-# Config files for hostapd
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/configs/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/configs/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny
-
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
