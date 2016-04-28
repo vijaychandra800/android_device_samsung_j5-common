@@ -9,7 +9,7 @@
   },
   {
     "repository": "kernel_samsung_j5lte",
-    "target_path": "kernel/samsung/j5nlte"
+    "target_path": "kernel/samsung/j5lte"
   },
   {
     "repository": "android_hardware_qcom_fm",
