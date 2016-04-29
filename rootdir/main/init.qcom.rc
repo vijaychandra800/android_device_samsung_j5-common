@@ -71,7 +71,7 @@ on early-boot
     chmod 0660 /dev/ttyHS0
 
 on boot
-
+    # Bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -111,9 +111,8 @@ on boot
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
 
-# NFC : permission for NFC
+# NFC
 	chmod 0660 /dev/pn547
-# NFC : change owner
 	chown nfc nfc /dev/pn547
 
 # IPSec for VOLTE
