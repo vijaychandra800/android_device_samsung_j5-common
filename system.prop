@@ -46,7 +46,8 @@ audio.offload.multiple.enabled=false
 audio.offload.pcm.enable=true
 audio.offload.min.duration.secs=30
 af.resampler.quality=4
-av.offload.enable=false
+#Enable offload audio video playback by default
+av.offload.enable=true
 av.streaming.offload.enable=false
 persist.audio.calfile0=/etc/Bluetooth_cal.acdb
 persist.audio.calfile1=/etc/General_cal.acdb
