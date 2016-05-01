@@ -143,7 +143,6 @@ PRODUCT_PACKAGES += \
     init.qcom.efs.sync.sh \
     init.qcom.fm.sh \
     init.qcom.modem_links.sh \
-    init.qcom.post_boot.sh \
     init.qcom.sdio.sh \
     init.qcom.uicc.sh \
     init.qcom.wifi.sh \
@@ -163,6 +162,8 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.qcom.power.rc \
+    init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
 
