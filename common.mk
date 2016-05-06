@@ -114,10 +114,10 @@ PRODUCT_PACKAGES += \
     libdashplayer
 
 PRODUCT_PACKAGES += \
-    QCMediaPlayer
+    qcmediaplayer
 
 PRODUCT_BOOT_JARS += \
-    QCMediaPlayer
+    qcmediaplayer
 
 # FM
 PRODUCT_PACKAGES += \
