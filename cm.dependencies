@@ -12,6 +12,10 @@
     "target_path": "kernel/samsung/j5lte"
   },
   {
+    "repository": "kernel_samsung_j53g",
+    "target_path": "kernel/samsung/j53g"
+  },
+  {
     "repository": "android_hardware_qcom_fm",
     "target_path": "hardware/qcom/fm"
   },
