@@ -80,10 +80,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     libtinyxml
 
-# NFC
-PRODUCT_PACKAGES += \
-    nfc_nci.msm8916
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8916
