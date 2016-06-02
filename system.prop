@@ -13,7 +13,6 @@ persist.radio.lte_vrte_ltd=1
 telephony.lteOnCdmaDevice=0
 ro.telephony.default_network=9
 ril.subscription.types=NV,RUIM
-DEVICE_PROVISIONED=1
 persist.radio.use_se_table_only=1
 persist.radio.jbims=1
 
