@@ -115,8 +115,8 @@ on boot
 # NFC
     chmod 0660 /dev/pn547
     chown nfc nfc /dev/pn547
-    mkdir /data/nfc 0700 nfc nfc
-    mkdir /data/nfc/param 0700 nfc nfc
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
 
 # IPSec for VOLTE
     chown root system /dev/socket
@@ -1044,7 +1044,6 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     user root
     group system
     disabled
-    oneshot
 
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
