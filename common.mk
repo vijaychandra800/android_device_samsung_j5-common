@@ -108,9 +108,7 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw \
-    libdashplayer
-
-PRODUCT_PACKAGES += \
+    libdashplayer \
     qcmediaplayer
 
 PRODUCT_BOOT_JARS += \
@@ -131,36 +129,16 @@ PRODUCT_PACKAGES += \
 
 # Configuration scripts
 PRODUCT_PACKAGES += \
-    hcidump.sh \
-    hsic.control.bt.sh \
-    init.ath3k.bt.sh \
     init.crda.sh \
-    init.qcom.audio.sh \
     init.qcom.bt.sh \
     init.qcom.coex.sh \
-    init.qcom.debug.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.fm.sh \
-    init.qcom.modem_links.sh \
-    init.qcom.sdio.sh \
-    init.qcom.uicc.sh \
-    init.qcom.wifi.sh \
-    init.qcom.zram.sh
+    init.qcom.fm.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.class_main.sh \
-    init.mdm.sh \
-    init.qcom.bms.sh \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.factory.sh \
     init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
-    init.qcom.usb.sh \
     init.qcom.power.rc \
     init.recovery.qcom.rc \
     init.target.rc \
