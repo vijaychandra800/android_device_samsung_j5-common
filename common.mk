@@ -74,7 +74,6 @@ PRODUCT_PACKAGES += \
     copybit.msm8916 \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
-    sensors.msm8916 \
     memtrack.msm8916 \
     libtinyxml
 
