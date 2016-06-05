@@ -36,7 +36,7 @@ vidc.enc.narrow.searchrange=1
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
-audio.offload.buffer.size.kb=64
+audio.offload.buffer.size.kb=32
 #Enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
 af.resampler.quality=4
