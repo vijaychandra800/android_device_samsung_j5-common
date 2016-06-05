@@ -133,8 +133,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.bt.sh \
-    init.qcom.coex.sh \
-    init.qcom.fm.sh
+    init.qcom.coex.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
