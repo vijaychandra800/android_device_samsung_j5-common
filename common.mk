@@ -52,6 +52,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
+    audio.primary.msm8916 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
