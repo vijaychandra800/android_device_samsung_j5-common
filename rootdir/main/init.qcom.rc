@@ -597,7 +597,7 @@ on post-fs-data
 
     mkdir /data/audio/ 0770 media audio
     
-# MTP permission
+    # MTP permission
     chmod 0660 /dev/mtp_usb
     chown system mtp /dev/mtp_usb
     mkdir /dev/socket/mtp 0770 system mtp
@@ -634,6 +634,13 @@ service ss_ramdump /system/bin/subsystem_ramdump
     user system
     group system
     disabled
+
+# FM
+on property:hw.fm.init=0
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
+
+on property:hw.fm.init=1
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 on property:persist.sys.ssr.restart_level=*
     start ssr_setup
