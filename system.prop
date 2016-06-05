@@ -38,6 +38,7 @@ ro.vendor.extension_library=libqti-perfd-client.so
 # Audio
 audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
+audio.offload.min.duration.secs=30
 audio.offload.buffer.size.kb=32
 #Enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
