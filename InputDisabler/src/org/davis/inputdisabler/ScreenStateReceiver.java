@@ -19,8 +19,6 @@ import android.util.Log;
 import org.davis.inputdisabler.utils.Constants;
 import org.davis.inputdisabler.utils.Device;
 
-import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
-
 public class ScreenStateReceiver extends BroadcastReceiver implements SensorEventListener {
 
     public static final String TAG = "ScreenStateReceiver";
@@ -50,14 +48,6 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
 
         if(DEBUG)
             Log.d(TAG, "Received intent: " + intent.getAction());
-
-        // Check if double tap is enabled
-        final int isDoubleTapEnabled = Settings.Secure.getInt(context.getContentResolver(),
-                DOUBLE_TAP_TO_WAKE, 0);
-
-        if(DEBUG)
-            Log.d(TAG, "Double tap to wake is " +
-                    ((isDoubleTapEnabled != 0) ? "" : "not ") + "enabled");
 
         switch (intent.getAction()) {
             case Intent.ACTION_SCREEN_ON:
