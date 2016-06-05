@@ -67,6 +67,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
+USE_DEVICE_SPECIFIC_DATASERVICES := true
 
 #PowerHAL
 TARGET_POWERHAL_VARIANT := qcom
