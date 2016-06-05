@@ -53,8 +53,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio_policy.msm8916 \
-    audio.a2dp.default \
     audio.primary.msm8916 \
+    audio_policy.default \
+    audio.primary.default \
+    audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -151,9 +153,7 @@ PRODUCT_PACKAGES += \
 # Filesystem
 PRODUCT_PACKAGES += \
     e2fsck \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs
+    fsck.f2fs
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
