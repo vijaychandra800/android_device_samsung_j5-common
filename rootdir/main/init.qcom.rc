@@ -102,6 +102,7 @@ on boot
 # Audio NXP
     chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
+    setprop hw.fm.mode normal ; setprop hw.fm.version 0 ; setprop ctl.start fm_dl
 
 # permissions for bluetooth.
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
