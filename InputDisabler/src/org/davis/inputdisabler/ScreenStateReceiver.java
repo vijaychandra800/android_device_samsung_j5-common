@@ -63,13 +63,6 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
                 if(DEBUG)
                     Log.d(TAG, "Screen off!");
 
-                // Don't turn off touch when double tap is enabled
-                if(isDoubleTapEnabled != 0) {
-                    Device.enableKeys(false);
-                } else {
-                    Device.enableDevices(false);
-                }
-
                 // Screen is now off
                 mScreenState = STATE_OFF;
                 break;
@@ -91,13 +84,6 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
 
                                 // Screen is off now
                                 mScreenState = STATE_OFF;
-
-                                // Don't turn off touch when double tap is enabled
-                                if(isDoubleTapEnabled != 0) {
-                                    Device.enableKeys(false);
-                                } else {
-                                    Device.enableDevices(false);
-                                }
                                 break;
                             case STATE_ON:
                                 if(DEBUG)
@@ -154,7 +140,7 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
 
             Device.enableDevices(false);
 
-	        // Screen is off no
+	        // Screen is off now
 	        mScreenState = STATE_OFF;
         } else {
             if(DEBUG)
