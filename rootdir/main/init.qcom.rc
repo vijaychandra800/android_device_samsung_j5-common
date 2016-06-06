@@ -635,12 +635,17 @@ service ss_ramdump /system/bin/subsystem_ramdump
     group system
     disabled
 
+    setprop hw.fm.mode normal
+    setprop hw.fm.version 0
+    setprop ctl.start fm_dl
+
 # FM
 on property:hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
 
 on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
+    setprop hw.fm.init 1
 
 on property:persist.sys.ssr.restart_level=*
     start ssr_setup
