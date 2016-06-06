@@ -115,8 +115,8 @@ on boot
 # NFC
     chmod 0660 /dev/sec-nfc
     chown nfc nfc /dev/sec-nfc
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
+    chmod 0660 /dev/pn547
+    chown nfc nfc /dev/pn547
 
 # IPSec for VOLTE
     chown root system /dev/socket
@@ -482,10 +482,16 @@ stop ril-daemon
     chmod 0664 /sys/class/power_supply/ps/status
     chown system radio /sys/class/power_supply/battery/batt_temp_table
 
+    # Start qcamerasvr
+    start qcamerasvr
+
 # msm specific files that need to be created on /data
 on post-fs-data
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
+
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
 
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/misc/camera 0770 camera camera
@@ -602,8 +608,6 @@ on post-fs-data
     chown system mtp /dev/mtp_usb
     mkdir /dev/socket/mtp 0770 system mtp
 
-    setprop vold.post_fs_data_done 1
-
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
@@ -624,6 +628,8 @@ on post-fs-data
     chown radio system /sys/class/dct/dct_node/interface
     chown radio system /sys/class/dct/dct_node/libname
     chown radio system /sys/class/dct/dct_node/tunned
+
+    setprop vold.post_fs_data_done 1
 
 service ssr_setup /system/bin/ssr_setup
     oneshot
@@ -750,6 +756,7 @@ service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     user bluetooth
     group bluetooth net_bt_admin net_bt_stack
     disabled
+    seclabel u:r:bluetooth_loader:s0
     oneshot
 
 on property:bluetooth.hciattach=true
@@ -838,6 +845,20 @@ service sensors /system/bin/sensors.qcom
     group root
     disabled
 
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+    class late_start
+    user root
+    group system
+    disabled
+    oneshot
+
+# FM
+on property:hw.fm.init=0
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
+
+on property:hw.fm.init=1
+    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
+
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
@@ -853,6 +874,11 @@ service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     group bluetooth net_bt_admin inet net_admin net_raw
     disabled
     oneshot
+
+service charger /charger
+    class charger
+    group log
+    seclabel u:r:healthd:s0
 
 service amp_init /system/bin/amploader -i
     class late_start
@@ -1023,13 +1049,6 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     group system
     disabled
     oneshot
-
-# FM
-on property:hw.fm.init=0
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
-
-on property:hw.fm.init=1
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
