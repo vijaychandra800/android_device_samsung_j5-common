@@ -1024,15 +1024,12 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     disabled
     oneshot
 
-    setprop hw.fm.mode normal ; setprop hw.fm.version 0 ; setprop ctl.start fm_dl
-
 # FM
 on property:hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
 
 on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
-    setprop hw.fm.init 1
 
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
