@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8916
+    power.default \
+    power.qcom
 
 # Lights
 PRODUCT_PACKAGES += \
