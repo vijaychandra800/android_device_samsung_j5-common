@@ -279,7 +279,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp \
     ro.sys.usb.default.config=mtp,adb \
     persist.sys.isUsbOtgEnabled=true
 
