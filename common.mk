@@ -115,7 +115,10 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    mm-core \
+    libc2dcolorconvert \
+    mm-video-v4l2
 
 # FM
 PRODUCT_PACKAGES += \
