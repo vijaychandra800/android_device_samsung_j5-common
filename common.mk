@@ -280,6 +280,7 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.sys.usb.default.config=mtp \
+    persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
 # Default.prop overrides to get adb working at boot   
