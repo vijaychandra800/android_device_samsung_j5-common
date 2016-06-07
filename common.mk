@@ -131,7 +131,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
-    libebtc
+    libebtc \
+    libcryptfs_hw
 
 # Configuration scripts
 PRODUCT_PACKAGES += \
