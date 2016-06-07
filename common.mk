@@ -63,6 +63,10 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libaudiopolicymanager
 
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
     tinyplay \
@@ -98,6 +102,7 @@ PRODUCT_PACKAGES += \
 
 # GPS HAL
 PRODUCT_PACKAGES += \
+    gps.default
     gps.msm8916
 
 # OMX
@@ -130,6 +135,10 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.bt.sh \
     init.qcom.coex.sh
+
+# Charger images
+PRODUCT_PACKAGES += \
+    charger_res_images
 
 # Ramdisk
 PRODUCT_PACKAGES += \
