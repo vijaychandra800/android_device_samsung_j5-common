@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
 
 # GPS HAL
 PRODUCT_PACKAGES += \
-    gps.default
+    gps.default \
     gps.msm8916
 
 # OMX
