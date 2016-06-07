@@ -284,7 +284,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Default.prop overrides to get adb working at boot   
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    ro.debuggable=1
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
