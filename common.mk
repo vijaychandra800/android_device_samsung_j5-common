@@ -59,6 +59,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
+    libserviceutility \
     libqcomvoiceprocessing
 
 # Stlport
