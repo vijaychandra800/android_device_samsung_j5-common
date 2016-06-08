@@ -53,7 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.primary.msm8916 \
-    audio.primary.default \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -84,7 +83,6 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.default \
     power.msm8916
 
 # Lights
@@ -102,7 +100,6 @@ PRODUCT_PACKAGES += \
 
 # GPS HAL
 PRODUCT_PACKAGES += \
-    gps.default \
     gps.msm8916
 
 # OMX
@@ -116,9 +113,7 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
-    mm-core \
-    mm-video-v4l2
+    libstagefrighthw
 
 # FM
 PRODUCT_PACKAGES += \
@@ -131,8 +126,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
-    libebtc \
-    libcryptfs_hw
+    libebtc
 
 # Configuration scripts
 PRODUCT_PACKAGES += \
