@@ -203,6 +203,7 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_NO_USB_STORAGE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
+BOARD_MTP_DEVICE := "/dev/mtp_usb"
 RECOVERY_SDCARD_ON_DATA := true
 #RECOVERY_VARIANT := twrp
 
