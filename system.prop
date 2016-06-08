@@ -83,11 +83,10 @@ wifi.interface=wlan0
 ro.qualcomm.bt.hci_transport=smd
 bluetooth.hfp.client=1
 
-# Fuse SDCard
-persist.fuse_sdcard=true
-
 # Misc.
-ro.qualcomm.cabl=2
+ro.chipname=MSM8916
+ro.warmboot.capability=1
+ro.qualcomm.cabl=0
 
 #
 # system props for the cne module
