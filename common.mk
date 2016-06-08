@@ -116,7 +116,6 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     mm-core \
-    libc2dcolorconvert \
     mm-video-v4l2
 
 # FM
@@ -139,10 +138,6 @@ PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.bt.sh \
     init.qcom.coex.sh
-
-# Charger images
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -184,7 +179,6 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     libxml2 \
-    libboringssl-compat \
     Stk
 
 # NFC configuration
