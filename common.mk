@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     copybit.msm8916 \
     gralloc.msm8916 \
+    nfc_nci.bcm2079x.default \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     libtinyxml
@@ -107,6 +108,7 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libextmedia_jni \
+    libqcmediaplayer \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
