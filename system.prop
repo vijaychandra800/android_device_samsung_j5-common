@@ -75,9 +75,6 @@ mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 
-# Default to AwesomePlayer
-media.stagefright.use-awesome=true
-
 # Wi-Fi, Bluetooth
 wifi.interface=wlan0
 ro.qualcomm.bt.hci_transport=smd
