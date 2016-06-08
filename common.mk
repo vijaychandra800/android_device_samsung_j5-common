@@ -61,7 +61,9 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libaudiopolicymanager
+    libaudiopolicymanager \
+    libmedia_helper \
+    libserviceutility
 
 # Stlport
 PRODUCT_PACKAGES += \
