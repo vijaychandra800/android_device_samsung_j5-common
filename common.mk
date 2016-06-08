@@ -106,6 +106,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libextmedia_jni \
     libqcmediaplayer \
+    libhdmi \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
