@@ -130,8 +130,7 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
     libebtc \
-    libcryptfs_hw \
-    libhealthd.qcom
+    libcryptfs_hw
 
 # Configuration scripts
 PRODUCT_PACKAGES += \
