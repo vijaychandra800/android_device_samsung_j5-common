@@ -53,14 +53,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.primary.msm8916 \
-    audio_policy.msm8916 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libserviceutility \
     libqcomvoiceprocessing
 
 # Stlport
