@@ -144,7 +144,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qcom.power.rc \
     init.recovery.qcom.rc \
-    init.target.rc \
     ueventd.qcom.rc
 
 # USB
