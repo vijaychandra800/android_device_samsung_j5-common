@@ -61,10 +61,6 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
-# Stlport
-PRODUCT_PACKAGES += \
-    libstlport
-
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
     tinyplay \
@@ -104,7 +100,8 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libextmedia_jni \
-    libqcmediaplayer \
+    qcmediaplayer \
+    libdashplayer \
     libOmxVidcCommon \
     libhdmi \
     libOmxAacEnc \
