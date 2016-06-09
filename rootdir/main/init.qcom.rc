@@ -1425,7 +1425,6 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
     write /sys/block/mmcblk0/queue/scheduler cfq
-    start qcom-usb-sh
     start qrngp
 
 service wfdservice /system/bin/wfdservice
