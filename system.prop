@@ -46,13 +46,6 @@ af.resampler.quality=4
 #Enable offload audio video playback by default
 av.offload.enable=true
 av.streaming.offload.enable=true
-persist.audio.calfile0=/etc/Bluetooth_cal.acdb
-persist.audio.calfile1=/etc/General_cal.acdb
-persist.audio.calfile2=/etc/Global_cal.acdb
-persist.audio.calfile3=/etc/Handset_cal.acdb
-persist.audio.calfile4=/etc/Hdmi_cal.acdb
-persist.audio.calfile5=/etc/Headset_cal.acdb
-persist.audio.calfile6=/etc/Speaker_cal.acdb
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
