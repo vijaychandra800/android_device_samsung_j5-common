@@ -103,7 +103,6 @@ PRODUCT_PACKAGES += \
     qcmediaplayer \
     libdashplayer \
     libOmxVidcCommon \
-    libhdmi \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -112,6 +111,9 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
 
 # FM
 PRODUCT_PACKAGES += \
