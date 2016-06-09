@@ -23,9 +23,8 @@ persist.data.netmgrd.qos.enable=false
 # Display
 debug.sf.hw=1
 debug.egl.hw=1
-debug.mdpcomp.logs=0
 dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
+debug.mdpcomp.idletime=600
 ro.sf.lcd_density=320
 debug.composition.type=c2d
 persist.hwc.mdpcomp.enable=true
@@ -40,10 +39,7 @@ audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 audio.offload.min.duration.secs=30
 audio.offload.buffer.size.kb=32
-#Enable dsp gapless mode by default
 audio.offload.gapless.enabled=true
-af.resampler.quality=4
-#Enable offload audio video playback by default
 av.offload.enable=true
 av.streaming.offload.enable=true
 persist.audio.fluence.voicecall=true
@@ -55,7 +51,7 @@ use.voice.path.for.pcm.voip=true
 tunnel.audio.encode = false
 
 # Media
-mm.enable.qcom_parser=3183219
+mm.enable.qcom_parser=3179041
 camera2.portability.force_api=1
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
@@ -78,13 +74,6 @@ ro.chipname=MSM8916
 ro.warmboot.capability=1
 ro.qualcomm.cabl=0
 persist.fuse_sdcard=true
-
-#
-# system props for the cne module
-#
-persist.cne.feature=0
-persist.cne.dpm=0
-persist.dpm.feature=0
 
 # Nitz
 persist.rild.nitz_plmn=""
