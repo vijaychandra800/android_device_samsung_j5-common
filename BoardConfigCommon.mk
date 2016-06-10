@@ -163,17 +163,20 @@ BOARD_SEPOLICY_UNION += \
     mediaserver.te \
     property_contexts \
     system_app.te \
+    platform_app.te \
     time_daemon.te \
     vold.te \
     bluetooth.te \
     file.te \
     kernel.te \
     mm-qcamerad.te \
-    property.te \
     rild.te \
     system_server.te \
     ueventd.te \
-    wcnss_service.te
+    wcnss_service.te \
+    init.te \
+    tee.te \
+    fsck.te
 
 # Misc.
 TARGET_SYSTEM_PROP := device/samsung/j5-common/system.prop
