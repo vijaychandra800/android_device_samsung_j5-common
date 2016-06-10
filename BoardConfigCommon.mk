@@ -169,6 +169,7 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     bluetooth.te \
     file.te \
+    tee.te \
     kernel.te \
     mm-qcamerad.te \
     rild.te \
