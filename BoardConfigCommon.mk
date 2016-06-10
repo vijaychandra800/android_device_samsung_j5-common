@@ -174,9 +174,7 @@ BOARD_SEPOLICY_UNION += \
     system_server.te \
     ueventd.te \
     wcnss_service.te \
-    init.te \
-    tee.te \
-    fsck.te
+    init.te
 
 # Misc.
 TARGET_SYSTEM_PROP := device/samsung/j5-common/system.prop
