@@ -161,9 +161,9 @@ BOARD_SEPOLICY_UNION += \
     bluetooth_loader.te \
     file_contexts \
     mediaserver.te \
+    property.te \
     property_contexts \
     system_app.te \
-    platform_app.te \
     time_daemon.te \
     vold.te \
     bluetooth.te \
