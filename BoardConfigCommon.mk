@@ -164,6 +164,7 @@ BOARD_SEPOLICY_UNION += \
     property.te \
     property_contexts \
     system_app.te \
+    untrusted_app.te \
     time_daemon.te \
     vold.te \
     bluetooth.te \
