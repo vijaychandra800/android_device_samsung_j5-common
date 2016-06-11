@@ -177,7 +177,6 @@ BOARD_SEPOLICY_UNION += \
     kernel.te \
     mm-qcamerad.te \
     rild.te \
-    system_server.te \
     ueventd.te \
     wcnss_service.te \
     init.te
