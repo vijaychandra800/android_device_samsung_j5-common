@@ -164,6 +164,7 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_UNION += \
     bluetooth_loader.te \
     file_contexts \
+    system_server.te \
     mediaserver.te \
     property.te \
     property_contexts \
