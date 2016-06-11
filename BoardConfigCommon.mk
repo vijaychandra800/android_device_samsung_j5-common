@@ -171,6 +171,7 @@ BOARD_SEPOLICY_UNION += \
     system_app.te \
     time_daemon.te \
     vold.te \
+    netd.te \
     bluetooth.te \
     file.te \
     tee.te \
