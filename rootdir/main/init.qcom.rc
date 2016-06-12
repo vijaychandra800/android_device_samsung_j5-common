@@ -598,6 +598,7 @@ service diag_uart_log /system/bin/diag_uart_log
 
 service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
     class main
+    seclabel u:r:irsc_util:s0
     user root
     oneshot
 
@@ -828,6 +829,7 @@ service qseecomd /system/bin/qseecomd
 
 service perfd /system/bin/perfd
    class main
+   seclabel u:r:perfd:s0
    user root
    group root
    disabled
