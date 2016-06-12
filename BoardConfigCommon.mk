@@ -164,6 +164,9 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SEPOLICY_UNION += \
     bluetooth_loader.te \
     file_contexts \
+    thermal_engine.te \
+    irsc_util.te \
+    perfd.te \
     system_server.te \
     mediaserver.te \
     property.te \
