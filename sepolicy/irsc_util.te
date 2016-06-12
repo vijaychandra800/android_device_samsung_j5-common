@@ -1,3 +1,0 @@
-allow irsc_util devpts:chr_file open;
-allow irsc_util irsc_util_exec:file execute_no_trans;
-allow irsc_util system_file:file entrypoint;
