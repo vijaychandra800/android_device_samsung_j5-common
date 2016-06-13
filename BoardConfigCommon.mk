@@ -163,6 +163,7 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     system_server.te \
     mediaserver.te \
+    untrusted_app.te \
     property.te \
     property_contexts \
     system_app.te \
