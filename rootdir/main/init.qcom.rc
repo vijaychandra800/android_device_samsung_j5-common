@@ -590,11 +590,6 @@ service diag_mdlog_stop /system/bin/diag_mdlog -k
     disabled
     oneshot
 
-service diag_uart_log /system/bin/diag_uart_log
-    class main
-    user root
-    group radio
-
 service irsc_util /system/bin/logwrapper /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
