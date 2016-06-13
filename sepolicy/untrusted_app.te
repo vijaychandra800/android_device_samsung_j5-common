@@ -25,3 +25,5 @@ allow untrusted_app mm-qcamerad_exec:file getattr;
 allow untrusted_app mtp_exec:file getattr;
 allow untrusted_app netd_exec:file getattr;
 allow untrusted_app wcnss_service_exec:file getattr;
+allow untrusted_app graphics_device:chr_file getattr;
+allow untrusted_app graphics_device:dir getattr;
