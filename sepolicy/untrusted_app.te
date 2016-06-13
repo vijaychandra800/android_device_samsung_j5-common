@@ -1,0 +1,12 @@
+allow untrusted_app adsprpcd_exec:file getattr;
+allow untrusted_app audiod_exec:file getattr;
+allow untrusted_app bootanim_exec:file getattr;
+allow untrusted_app btnvtool_exec:file getattr;
+allow untrusted_app clatd_exec:file getattr;
+allow untrusted_app debuggerd_exec:file getattr;
+allow untrusted_app dhcp_exec:file getattr;
+allow untrusted_app dnsmasq_exec:file getattr;
+allow untrusted_app drmserver_exec:file getattr;
+allow untrusted_app logd_exec:file getattr;
+allow untrusted_app recovery_cache_file:dir { read getattr open };
+allow untrusted_app recovery_cache_file:file getattr;
