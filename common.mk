@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += \
     libhdmi \
     libqservice \
     liboverlay \
+    librs_jni \
     libtinyxml
 
 # Power
@@ -237,6 +238,7 @@ PRODUCT_PACKAGES += \
     libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
+    hostapd \
     wcnss_service
 
 # CRDA
