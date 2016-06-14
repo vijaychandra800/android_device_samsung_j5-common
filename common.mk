@@ -74,9 +74,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-    libhdmi \
-    libqservice \
-    liboverlay \
     librs_jni \
     libtinyxml
 
@@ -106,6 +103,13 @@ PRODUCT_PACKAGES += \
     libextmedia_jni \
     qcmediaplayer \
     libdashplayer \
+    libOmxVenc \
+    libOmxVdec \
+    libOmxCore \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libstagefrighthw
 
 # FM
