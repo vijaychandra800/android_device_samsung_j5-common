@@ -107,9 +107,6 @@ PRODUCT_PACKAGES += \
     libdashplayer \
     libstagefrighthw
 
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
-
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
