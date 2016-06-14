@@ -76,6 +76,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     libhdmi \
     libqservice \
+    liboverlay \
     libtinyxml
 
 # Power
