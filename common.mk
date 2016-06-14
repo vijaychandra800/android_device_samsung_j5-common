@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     libhdmi \
+    libqservice \
     libtinyxml
 
 # Power
