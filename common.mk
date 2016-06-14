@@ -102,7 +102,9 @@ PRODUCT_PACKAGES += \
     libextmedia_jni \
     qcmediaplayer \
     libdashplayer \
-    libstagefrighthw
+    libstagefrighthw \
+    libOmxVdecHevc \
+    libFlacSwDec
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
