@@ -97,19 +97,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8916
 
-# OMX
+# Media
 PRODUCT_PACKAGES += \
     libextmedia_jni \
     qcmediaplayer \
     libdashplayer \
-    libOmxVidcCommon \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
     libstagefrighthw
 
 PRODUCT_BOOT_JARS += \
