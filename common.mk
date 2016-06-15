@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxVdpp \
     libdivxdrmdecrypt \
     libmm-omxcore \
     msm-vidc-test \
