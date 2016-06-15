@@ -52,6 +52,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
+    audio_policy.msm8916 \
     audio.primary.msm8916 \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -59,6 +60,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
+    libaudiopolicymanager \
     libqcomvoiceprocessing
 
 # TinyAlsa utils
