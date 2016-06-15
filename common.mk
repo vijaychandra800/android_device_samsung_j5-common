@@ -103,13 +103,19 @@ PRODUCT_PACKAGES += \
     libextmedia_jni \
     qcmediaplayer \
     libdashplayer \
+    libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
+    libOmxVdecHevc \
     libOmxCore \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
+    msm-vidc-test \
+    libc2dcolorconvert \
     libstagefrighthw
 
 # FM
