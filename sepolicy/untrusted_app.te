@@ -50,3 +50,4 @@ allow untrusted_app sysinit_exec:file getattr;
 allow untrusted_app time_daemon_exec:file getattr;
 allow untrusted_app userinit_exec:file getattr;
 allow untrusted_app vold_exec:file getattr;
+allow untrusted_app tee_exec:file getattr;
