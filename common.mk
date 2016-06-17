@@ -107,20 +107,11 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxCore \
     libOmxAacEnc \
-    libOmxAacDec \
     libOmxAmrEnc \
-    libOmxEvrcDec \
-    libOmxQcelp13Dec \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxVdpp \
-    libdivxdrmdecrypt \
-    libmm-omxcore \
-    msm-vidc-test \
-    libc2dcolorconvert \
     libstagefrighthw
 
 # FM
