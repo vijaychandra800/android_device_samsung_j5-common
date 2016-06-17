@@ -35,8 +35,10 @@ vidc.enc.narrow.searchrange=1
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
 audio.offload.min.duration.secs=30
-audio.offload.buffer.size.kb=64
+audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
 av.offload.enable=true
 av.streaming.offload.enable=true
