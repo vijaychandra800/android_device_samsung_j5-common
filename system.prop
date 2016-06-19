@@ -52,6 +52,7 @@ tunnel.audio.encode=false
 lpa.decode=false
 lpa.use-stagefright=false
 tunnel.decode=false
+af.resampler.quality=4
 
 # Media
 mm.enable.qcom_parser=3179041
