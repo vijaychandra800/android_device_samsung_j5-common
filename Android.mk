@@ -15,7 +15,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-SAMSUNG_TARGETS := j5nltexx j5ltexx j53gxx j5ltedx j5lteub j5ltezt j5ylte
+SAMSUNG_TARGETS := j5nltexx j5ltexx j53gxx j5ltedx j5lteub j5ltezt j5yltedo
 
 ifneq ($(filter $(SAMSUNG_TARGETS),$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
