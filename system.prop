@@ -53,6 +53,7 @@ lpa.decode=false
 lpa.use-stagefright=false
 tunnel.decode=false
 af.resampler.quality=4
+ro.fm.transmitter=false
 
 # Media
 mm.enable.qcom_parser=3183219
