@@ -50,6 +50,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     InputDisabler
 
+# Space configuration tool
+PRODUCT_PACKAGES += \
+    parted
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
