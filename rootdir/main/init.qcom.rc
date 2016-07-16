@@ -559,6 +559,10 @@ on post-fs-data
     chmod 0775 /efs/.files/.dm33
     chmod 0775 /efs/.files/.mp301
 
+    setprop hw.fm.mode normal
+    setprop hw.fm.version 0
+    start fm_dl
+
     setprop vold.post_fs_data_done 1
 
     mkdir /data/diag_logs 0777 system system 5
@@ -859,3 +863,10 @@ service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
     user root
     disabled
     group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
+
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+    class late_start
+    user root
+    group system
+    disabled
+    oneshot
