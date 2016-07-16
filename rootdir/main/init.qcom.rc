@@ -560,8 +560,7 @@ on post-fs-data
     chmod 0775 /efs/.files/.mp301
 
     setprop hw.fm.mode normal
-    setprop hw.fm.version 0
-    start fm_dl
+    setprop ctl.start fm_dl
 
     setprop vold.post_fs_data_done 1
 
