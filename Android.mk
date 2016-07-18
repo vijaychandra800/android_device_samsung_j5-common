@@ -65,7 +65,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 KW_IMAGES := \
     kiwi.b00 kiwi.b01 kiwi.b02 kiwi.b03 kiwi.mdt
 
-KW_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(KM_IMAGES)))
+KW_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(KW_IMAGES)))
 $(KW_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Kiwi firmware link: $@"
 	@mkdir -p $(dir $@)
