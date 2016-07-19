@@ -254,6 +254,22 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/input/enabled
     chown system system /sys/class/sec/sec_touchkey/brightness
 
+    # Setup HDMI related nodes & permissions
+    chown -h system.graphics /sys/class/graphics/fb1/hpd
+    chown -h system.system /sys/class/graphics/fb1/hdcp/tp
+    chown -h system.graphics /sys/class/graphics/fb1/vendor_name
+    chown -h system.graphics /sys/class/graphics/fb1/product_description
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/vendor_name
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/product_description
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod -h 0664 /sys/devices/virtual/graphics/fb1/format_3d
+    # create symbolic link
+    ln -s /dev/graphics/fb1 /dev/graphics/hdmi
+    # Change owner and group for media server and surface flinger
+    chown -h system.system /sys/class/graphics/fb1/format_3d
+
     chown radio system /sys/devices/system/cpu/kernel_max
     chmod 664 /sys/devices/system/cpu/kernel_max
 
