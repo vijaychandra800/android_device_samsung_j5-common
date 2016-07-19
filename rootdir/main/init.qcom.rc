@@ -76,6 +76,7 @@ on init
 
 on fs
     mount_all fstab.qcom
+    swapon_all fstab.qcom
 
     chown system radio /efs
     chmod 0771 /efs
@@ -561,7 +562,7 @@ on post-fs-data
 
     setprop hw.fm.mode normal
     setprop hw.fm.version 0
-    setprop ctl.start fm_dl
+    setprop start fm_dl
 
     setprop vold.post_fs_data_done 1
 
