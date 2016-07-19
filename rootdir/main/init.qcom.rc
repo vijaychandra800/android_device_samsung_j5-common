@@ -155,8 +155,8 @@ on boot
 
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
     # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
+    write /proc/sys/net/core/rmem_max  2097152
+    write /proc/sys/net/core/wmem_max  2097152
 
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
