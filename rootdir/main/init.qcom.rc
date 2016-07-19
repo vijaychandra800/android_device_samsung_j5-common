@@ -562,11 +562,13 @@ on post-fs-data
 
     setprop hw.fm.mode normal
     setprop hw.fm.version 0
-    setprop start fm_dl
 
     setprop vold.post_fs_data_done 1
 
     mkdir /data/diag_logs 0777 system system 5
+
+on property:sys.boot_completed=1
+    start fm_dl
 
 service netmgrd /system/bin/netmgrd
     class main
