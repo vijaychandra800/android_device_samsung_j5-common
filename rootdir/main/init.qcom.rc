@@ -389,6 +389,7 @@ on boot
 
     # Start qcamerasvr
     start qcamerasvr
+    start fm_dl
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -561,15 +562,9 @@ on post-fs-data
     chmod 0775 /efs/.files/.dm33
     chmod 0775 /efs/.files/.mp301
 
-    setprop hw.fm.mode normal
-    setprop hw.fm.version 0
-
     setprop vold.post_fs_data_done 1
 
     mkdir /data/diag_logs 0777 system system 5
-
-on property:sys.boot_completed=1
-    start fm_dl
 
 service netmgrd /system/bin/netmgrd
     class main
