@@ -389,7 +389,6 @@ on boot
 
     # Start qcamerasvr
     start qcamerasvr
-    start fm_dl
 
 # msm specific files that need to be created on /data
 on post-fs-data
