@@ -256,20 +256,20 @@ on boot
     chown system system /sys/class/sec/sec_touchkey/brightness
 
     # Setup HDMI related nodes & permissions
-    chown system graphics /sys/devices/virtual/graphics/fb0/hpd
-    chown system system /sys/devices/virtual/graphics/fb0/hdcp/tp
-    chown system graphics /sys/devices/virtual/graphics/fb0/vendor_name
-    chown system graphics /sys/devices/virtual/graphics/fb0/product_description
-    chmod 0664 /sys/devices/virtual/graphics/fb0/hpd
-    chmod 0664 /sys/devices/virtual/graphics/fb0/hdcp/tp
-    chmod 0664 /sys/devices/virtual/graphics/fb0/vendor_name
-    chmod 0664 /sys/devices/virtual/graphics/fb0/product_description
-    chmod 0664 /sys/devices/virtual/graphics/fb0/video_mode
-    chmod 0664 /sys/devices/virtual/graphics/fb0/format_3d
+    chown system graphics /sys/devices/virtual/graphics/fb1/hpd
+    chown system system /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chown system graphics /sys/devices/virtual/graphics/fb1/vendor_name
+    chown system graphics /sys/devices/virtual/graphics/fb1/product_description
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/vendor_name
+    chmod 0664 /sys/devices/virtual/graphics/fb1/product_description
+    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
     # create symbolic link
-    symlink /dev/graphics/fb0 /dev/graphics/hdmi
+    symlink /dev/graphics/fb1 /dev/graphics/hdmi
     # Change owner and group for media server and surface flinger
-    chown system system /sys/devices/virtual/graphics/fb0/format_3d
+    chown system system /sys/devices/virtual/graphics/fb1/format_3d
 
     chown radio system /sys/devices/system/cpu/kernel_max
     chmod 664 /sys/devices/system/cpu/kernel_max
