@@ -59,6 +59,9 @@ EXTENDED_FONT_FOOTPRINT := true
 # malloc implementation
 MALLOC_IMPL := dlmalloc
 
+# CMHW
+BOARD_HARDWARE_CLASS += device/samsung/j5-common/cmhw
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
