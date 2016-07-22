@@ -83,6 +83,7 @@ AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
 
 #PowerHAL
+TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 
 # Charger
