@@ -39,8 +39,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -200,8 +199,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # ExtSD rw permissions fix
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/platform.xml:system/etc/permissions/platform.xml
+# PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/platform.xml:system/etc/permissions/platform.xml
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
