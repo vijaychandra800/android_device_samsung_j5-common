@@ -55,9 +55,9 @@
     <ctl name="RX1 MIX1 INP2" value="ZERO" />
     <ctl name="RX1 MIX1 INP1" value="ZERO" />
 
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="88" />
+    <ctl name="RX1 Digital Volume" value="0" />
+    <ctl name="RX2 Digital Volume" value="0" />
+    <ctl name="RX3 Digital Volume" value="0" />
 
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
     <ctl name="Voice Rx Device Mute" id="1" value="-1" />
@@ -738,8 +738,8 @@
 
     <path name="headset">
         <path name="ear" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="86" />
+        <ctl name="RX2 Digital Volume" value="86" />
     </path>
 
     <path name="dock">
@@ -751,8 +751,8 @@
 
     <path name="headphones">
         <path name="ear" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="86" />
+        <ctl name="RX2 Digital Volume" value="86" />
         <ctl name="EAR PA Gain" value="POS_1P5_DB" />	
     </path>
 
