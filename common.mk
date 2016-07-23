@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     InputDisabler
 
+# Samsung libril shim library
+PRODUCT_PACKAGES += \
+    libril_shim
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
