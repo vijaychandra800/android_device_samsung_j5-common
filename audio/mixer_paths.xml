@@ -733,13 +733,13 @@
 
     <path name="speaker">
         <path name="spk" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX3 Digital Volume" value="84" />
     </path>
 
     <path name="headset">
         <path name="ear" />
-        <ctl name="RX1 Digital Volume" value="86" />
-        <ctl name="RX2 Digital Volume" value="86" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
     </path>
 
     <path name="dock">
@@ -751,40 +751,40 @@
 
     <path name="headphones">
         <path name="ear" />
-        <ctl name="RX1 Digital Volume" value="86" />
-        <ctl name="RX2 Digital Volume" value="86" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
         <ctl name="EAR PA Gain" value="POS_1P5_DB" />	
     </path>
 
     <path name="speaker-and-headphones">
         <path name="spk-ear" />
-        <ctl name="RX1 Digital Volume" value="70" />
-        <ctl name="RX2 Digital Volume" value="70" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX1 Digital Volume" value="62" />
+        <ctl name="RX2 Digital Volume" value="62" />
+        <ctl name="RX3 Digital Volume" value="84" />
         <ctl name="EAR PA Gain" value="POS_1P5_DB" />	
     </path>
 
     <path name="speaker-and-hdmi">
         <path name="spk" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX3 Digital Volume" value="84" />
     </path>
 
     <path name="speaker-and-proxy">
         <path name="spk" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX3 Digital Volume" value="84" />
     </path>
 
     <path name="speaker-and-dock">
 	<path name="spk-lineout" />
-        <ctl name="RX1 Digital Volume" value="64" />
-        <ctl name="RX2 Digital Volume" value="64" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX1 Digital Volume" value="56" />
+        <ctl name="RX2 Digital Volume" value="56" />
+        <ctl name="RX3 Digital Volume" value="84" />
         <ctl name="EAR PA Gain" value="POS_1P5_DB" />	
     </path>
 
     <path name="fm-speaker">
         <path name="spk" />
-        <ctl name="RX3 Digital Volume" value="84" />
+        <ctl name="RX3 Digital Volume" value="77" />
     </path>	
 
     <path name="fm-headset">
@@ -796,7 +796,7 @@
 
     <path name="speaker-and-bt-sco">
         <path name="spk" />
-        <ctl name="RX3 Digital Volume" value="88" />
+        <ctl name="RX3 Digital Volume" value="84" />
     </path>
 
     <!-- end of Play Scenario -->
