@@ -147,10 +147,6 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
 # Filesystem
 PRODUCT_PACKAGES += \
     fsck.f2fs
