@@ -159,28 +159,6 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     device/samsung/j5-common/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    bluetooth_loader.te \
-    file_contexts \
-    system_server.te \
-    mediaserver.te \
-    untrusted_app.te \
-    property.te \
-    property_contexts \
-    system_app.te \
-    time_daemon.te \
-    vold.te \
-    netd.te \
-    bluetooth.te \
-    file.te \
-    tee.te \
-    kernel.te \
-    mm-qcamerad.te \
-    rild.te \
-    ueventd.te \
-    wcnss_service.te \
-    init.te
-
 # Misc.
 TARGET_SYSTEM_PROP := device/samsung/j5-common/system.prop
 
