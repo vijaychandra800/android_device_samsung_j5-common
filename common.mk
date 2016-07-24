@@ -262,12 +262,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# USB
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.sys.usb.default.config=mtp \
-    persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true
-
 # Default.prop overrides to get adb working at boot   
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
