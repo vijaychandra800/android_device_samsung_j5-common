@@ -39,6 +39,7 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/j5-common/include
 
 # Kernel
+TARGET_KERNEL_ARCH           := arm
 BOARD_DTBTOOL_ARG            := -2
 BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_BASE            := 0x80000000
