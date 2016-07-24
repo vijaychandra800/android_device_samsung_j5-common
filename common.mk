@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_PACKAGES += \
     libextmedia_jni \
-    qcmediaplayer \
+    libqcmediaplayer \
     libdashplayer \
     libOmxVidcCommon \
     libOmxVenc \
