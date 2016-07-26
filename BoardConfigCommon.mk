@@ -39,7 +39,8 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/j5-common/include
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK      := device/samsung/j5-common/mkbootimg.mk
+TARGET_KERNEL_ARCH           := arm
+BOARD_DTBTOOL_ARG            := -2
 BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_BASE            := 0x80000000
 BOARD_RAMDISK_OFFSET         := 0x02000000
@@ -62,19 +63,15 @@ BOARD_HARDWARE_CLASS += device/samsung/j5-common/cmhw
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
-#AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := true
-#AUDIO_FEATURE_ENABLED_FM := true
+AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
-AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
-AUDIO_FEATURE_ENABLED_HFP := true
-AUDIO_FEATURE_ENABLED_USBAUDIO := true
 AUDIO_FEATURE_ENABLED_WFD_CONCURRENCY := true
 AUDIO_FEATURE_ENABLED_VOICE_CONCURRENCY := true
 AUDIO_FEATURE_ENABLED_RECORD_PLAY_CONCURRENCY := true
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
