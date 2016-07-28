@@ -26,6 +26,3 @@
 
 # EFS
 /dev/block/bootdevice/by-name/efs                                   u:object_r:modem_efs_partition_device:s0
-
-# Display
-/sys/devices/virtual/graphics/fb0/rgb                               u:object_r:kcal_sysfs:s0
