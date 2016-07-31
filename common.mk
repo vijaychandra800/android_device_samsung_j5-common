@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     librs_jni \
-    libtinyxml
+    libtinyxml \
+    libexternal
 
 # Power
 PRODUCT_PACKAGES += \
