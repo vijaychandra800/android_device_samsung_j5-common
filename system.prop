@@ -15,6 +15,7 @@ ro.telephony.default_network=9
 ril.subscription.types=NV,RUIM
 persist.radio.use_se_table_only=1
 persist.radio.jbims=1
+DEVICE_PROVISIONED=1
 
 # Netmgrd
 ro.use_data_netmgrd=false
