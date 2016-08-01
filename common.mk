@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916 \
     librs_jni \
     libtinyxml \
-    libexternal
+    libhdmi
 
 # Power
 PRODUCT_PACKAGES += \
