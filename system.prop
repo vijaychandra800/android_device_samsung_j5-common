@@ -22,10 +22,6 @@ ro.use_data_netmgrd=false
 persist.data.netmgrd.qos.enable=false
 
 # Display
-ro.hdmi.enable=true
-persist.demo.hdmirotation=true
-persist.demo.hdmirotationlock=false
-persist.demo.singledisplay=true
 debug.sf.hw=1
 debug.egl.hw=1
 dev.pm.dyn_samplingrate=1
@@ -104,7 +100,6 @@ ro.pip.gated=0
 
 # WFD
 persist.debug.wfd.enable=1
-persist.sys.wfd.virtual=0
 persist.hwc.enable_vds=1
 
 # Time
