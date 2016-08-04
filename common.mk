@@ -198,10 +198,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# ExtSD rw permissions fix
-# PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/platform.xml:system/etc/permissions/platform.xml
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
