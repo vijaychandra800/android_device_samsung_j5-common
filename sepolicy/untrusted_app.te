@@ -53,3 +53,4 @@ allow untrusted_app vold_exec:file getattr;
 allow untrusted_app tee_exec:file getattr;
 allow untrusted_app device:dir { read open };
 allow untrusted_app firmware_file:dir search;
+allow untrusted_app firmware_file:file getattr;
