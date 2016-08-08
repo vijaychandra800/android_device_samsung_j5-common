@@ -175,6 +175,7 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     tee.te \
     kernel.te \
+    shell.te \
     mm-qcamerad.te \
     rild.te \
     ueventd.te \
