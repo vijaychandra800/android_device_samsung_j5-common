@@ -357,7 +357,7 @@ on boot
     mkdir /data/misc/camera 0770 camera camera
 
     # Auto Brightness
-	chown system system  /sys/class/backlight/panel/auto_brightness
+    chown system system /sys/class/backlight/panel/auto_brightness
     chmod 0660 /sys/class/backlight/panel/auto_brightness
 
     chown radio system /sys/class/lcd/panel/partial_disp
