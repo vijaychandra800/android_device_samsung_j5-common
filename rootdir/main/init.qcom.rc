@@ -87,6 +87,10 @@ on fs
 
     restorecon_recursive /persist
 
+    # fm_radio
+    chmod 0640 /dev/radio0
+    chown system system /dev/radio0
+
     # Audio NXP
     chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
@@ -202,7 +206,8 @@ on boot
     # NFC : Permissions for NFC
     chmod 0660 /dev/sec-nfc
     chown nfc nfc /dev/sec-nfc
-
+    mkdir /data/nfc 0700 nfc nfc
+    mkdir /data/nfc/param 0700 nfc nfc
     chmod 0660 /dev/pn547
     chown nfc nfc /dev/pn547
 
@@ -258,6 +263,8 @@ on boot
     chown system radio /sys/class/sensors/light_sensor/raw_data
     chown system radio /sys/class/sensors/light_sensor/vendor
     chown system radio /sys/class/sensors/light_sensor/name
+    # MetaEvent
+    chown system radio /sys/class/sensors/sensor_dev/flush
 
     # Vibrator
     chmod 0644 /sys/class/timed_output/vibrator/pwm_value
@@ -349,6 +356,10 @@ on boot
     # camera sockets
     mkdir /data/misc/camera 0770 camera camera
 
+    # Auto Brightness
+	chown system system  /sys/class/backlight/panel/auto_brightness
+    chmod 0660 /sys/class/backlight/panel/auto_brightness
+
     chown radio system /sys/class/lcd/panel/partial_disp
     chmod 0660 /sys/class/lcd/panel/partial_disp
 
@@ -385,21 +396,39 @@ on boot
     chown system system /sys/module/msm_thermal/core_control/enabled
 
     # Permissions for Camera
-    chown system system /sys/class/camera/rear/isp_core
-    chown system system /sys/class/camera/rear/rear_camfw_full
+    chown root system /sys/class/camera/rear/rear_camantibanding
     chown system system /sys/class/camera/rear/rear_camfw
+    chown system system /sys/class/camera/rear/rear_checkfw_user
+    chown system system /sys/class/camera/rear/rear_checkfw_factory
+    chown system system /sys/class/camera/rear/rear_camfw_full
+    chown system system /sys/class/camera/rear/rear_camfw_load
     chown system system /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_corever
+    chown system radio /sys/class/camera/rear/rear_companionfw_full
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/rear_fwcheck
+    chown system system /sys/class/camera/rear/isp_core
+    chown system system /sys/class/camera/rear/rear_caminfo
     chown system radio /sys/class/camera/flash/rear_flash
+    chown system radio /sys/class/camera/flash/front_flash
     chown system system /sys/class/camera/front/front_camfw
     chown system system /sys/class/camera/front/front_camtype
     chown system system /sys/class/camera/front/front_camfw_full
     chown system system /sys/class/camera/front/front_camfw_load
-    chown system system /sys/class/camera/rear/rear_checkfw_user
-    chown system system /sys/class/camera/rear/rear_checkfw_factory
+    chown system system /sys/class/camera/front/front_caminfo
 
-    # OTG Test
+    # MTP permission
+    chmod 0660 /dev/mtp_usb
+    chown system mtp /dev/mtp_usb
+    chmod 0660 /dev/usb_mtp_gadget
+    chown system mtp /dev/usb_mtp_gadget
+    mkdir /dev/socket/mtp 0770 system mtp
+
+    #OTG Test
     chown system radio /sys/class/host_notify/usb_otg/booster
     chmod 0660 /sys/class/host_notify/usb_otg/booster
+    chown system radio /sys/class/usb_notify/usb_control/disable
+    chmod 0660 /sys/class/usb_notify/usb_control/disable
 
     # GPIO keys
     chmod 0660 /sys/class/input/input7/enabled
