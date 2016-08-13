@@ -38,17 +38,18 @@ on early-init
     mkdir /firmware-modem 0771 system system
 
     chown system system /sys/kernel/debug/kgsl/proc
-    chmod 644 /proc/cmdline
+    chmod 0644 /proc/cmdline
 
     symlink /data/tombstones /tombstones
 
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
-
+    mkdir /mnt/shell 0750 shell shell
     mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0550 system sdcard_r
+    mkdir /storage 0751 system sdcard_r
     mkdir /storage/emulated 0555 root root
+    mkdir /mnt/secure 0700 root root
 
     # External storage directories
     mkdir /mnt/media_rw/sdcard0 0777 media_rw media_rw
@@ -94,6 +95,22 @@ on fs
     # Audio NXP
     chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
+
+    # Permissions for svc led
+    chown system system /sys/class/sec/led/led_r
+    chown system system /sys/class/sec/led/led_g
+    chown system system /sys/class/sec/led/led_b
+    chown system system /sys/class/sec/led/led_pattern
+    chown system system /sys/class/sec/led/led_blink
+    chown system system /sys/class/sec/led/led_lowpower
+
+    # permissons for uartsel & usbsel sysfs
+    chmod 0660 /sys/class/sec/switch/uart_en
+    chmod 0660 /sys/class/sec/switch/uart_sel
+    chmod 0660 /sys/class/sec/switch/usb_sel
+    chown system system /sys/class/sec/switch/uart_en
+    chown system system /sys/class/sec/switch/uart_sel
+    chown system system /sys/class/sec/switch/usb_sel
 
     setprop ro.crypto.fuse_sdcard true
 
@@ -212,15 +229,15 @@ on boot
     chown nfc nfc /dev/pn547
 
     # setup permissions for fb1 related nodes
-    chown -h system graphics /sys/class/graphics/fb1/hpd
-    chown -h system system /sys/class/graphics/fb1/hdcp/tp
-    chmod -h 0664 /sys/devices/virtual/graphics/fb1/hpd
-    chmod -h 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
-    chmod -h 0664 /sys/devices/virtual/graphics/fb1/video_mode
-    chmod -h 0664 /sys/devices/virtual/graphics/fb1/format_3d
+    chown system graphics /sys/class/graphics/fb1/hpd
+    chown system system /sys/class/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
 
     # Change owner and group for media server and surface flinger
-    chown -h system system /sys/devices/virtual/graphics/fb1/format_3d
+    chown system system /sys/devices/virtual/graphics/fb1/format_3d
 
     # Set the property to indicate type of virtual display to 0
     # 0 indicates that virtual display is not a Wifi display and that the
@@ -270,6 +287,27 @@ on boot
     chmod 0644 /sys/class/timed_output/vibrator/pwm_value
     chown system system /sys/class/timed_output/vibrator/pwm_value
     chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/leds/keyboard-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/torch-light/brightness
+    chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/jogball-backlight/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/module/sco/parameters/disable_esco
+    chown system system /sys/kernel/ipv4/tcp_wmem_min
+    chown system system /sys/kernel/ipv4/tcp_wmem_def
+    chown system system /sys/kernel/ipv4/tcp_wmem_max
+    chown system system /sys/kernel/ipv4/tcp_rmem_min
+    chown system system /sys/kernel/ipv4/tcp_rmem_def
+    chown system system /sys/kernel/ipv4/tcp_rmem_max
+    chown root radio /proc/cmdline
 
     # permission for Input Device(TSP).
     chown system radio /sys/class/sec/tsp/cmd
@@ -279,17 +317,18 @@ on boot
     # permission for Input Device(TKEY).
     chmod 0660 /sys/class/sec/sec_touchkey/input/enabled
     chown system system /sys/class/sec/sec_touchkey/input/enabled
+    chmod 0660 /sys/class/sec/sec_touchkey/brightness
     chown system system /sys/class/sec/sec_touchkey/brightness
 
     chown radio system /sys/devices/system/cpu/kernel_max
-    chmod 664 /sys/devices/system/cpu/kernel_max
+    chmod 0664 /sys/devices/system/cpu/kernel_max
 
     chown radio system /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-    chmod 664  /sys/class/kgsl/kgsl-3d0/max_pwrlevel
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
     chown radio system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
-    chmod 664  /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
     chown radio system /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
-    chmod 664  /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies
 
     # Permissions for SSRM
     chmod 0664 /sys/devices/platform/sec-thermistor/temperature
@@ -327,9 +366,37 @@ on boot
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 
+    # Permissions for Charging
+	mkdir /efs/Battery 0775 radio system
+    chown system radio /sys/class/power_supply/battery/batt_reset_soc
+    chown system radio /sys/class/power_supply/battery/update
+    chown system radio /sys/class/power_supply/battery/factory_mode
+    chown system radio /sys/class/power_supply/battery/batt_slate_mode
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/call
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/video
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/music
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/browser
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/hotspot
+    chown sdcard_rw sdcard_rw /sys/class/power_supply/battery/camera
+    chown system radio /sys/class/power_supply/battery/talk_wcdma
+    chown system radio /sys/class/power_supply/battery/talk_gsm
+    chown system radio /sys/class/power_supply/battery/call
+    chown system radio /sys/class/power_supply/battery/data_call
+    chown system radio /sys/class/power_supply/battery/gps
+    chown system radio /sys/class/power_supply/battery/wifi
+    chown system radio /sys/class/power_supply/battery/lte
+    chown system radio /sys/class/power_supply/battery/wc_enable
+    chown system radio /sys/class/power_supply/battery/lcd
+    chown system radio /sys/class/power_supply/ps/status
+    chmod 0664 /sys/class/power_supply/ps/status
+    chown system radio /sys/class/power_supply/battery/batt_temp_table
+
+    # Define default initial receive window size in segments.
+    setprop net.tcp.default_init_rwnd 60
+
     # LCD mdnie and panel work
-    chown system system  /sys/class/mdnie/mdnie/lcdtype
-    chown system system  /sys/class/mdnie/mdnie/lcd_power
+    chown system system /sys/class/mdnie/mdnie/lcdtype
+    chown system system /sys/class/mdnie/mdnie/lcd_power
     chown system media_rw /sys/class/mdnie/mdnie/scenario
     chmod 0660 /sys/class/mdnie/mdnie/scenario
     chown system system /sys/class/mdnie/mdnie/sensorRGB
@@ -337,13 +404,13 @@ on boot
 
     chown system system /sys/class/mdnie/mdnie/tuning
     chown system media_rw /sys/class/mdnie/mdnie/outdoor
-    chown system system  /sys/class/mdnie/mdnie/mdnie_temp
+    chown system system /sys/class/mdnie/mdnie/mdnie_temp
     chown system media_rw /sys/class/mdnie/mdnie/mode
     chown system system /sys/class/mdnie/mdnie/negative
     chown system media_rw /sys/class/mdnie/mdnie/playspeed
     chown system media_rw /sys/class/mdnie/mdnie/accessibility
-    chown system system  /sys/class/mdnie/mdnie/cabc
-    chown system system  /sys/class/mdnie/mdnie/bypass
+    chown system system /sys/class/mdnie/mdnie/cabc
+    chown system system /sys/class/mdnie/mdnie/bypass
 
     chown system system /sys/class/lcd/panel/panel/auto_brightness
     chown system system /sys/class/lcd/panel/window_type
@@ -420,9 +487,12 @@ on boot
     # MTP permission
     chmod 0660 /dev/mtp_usb
     chown system mtp /dev/mtp_usb
-    chmod 0660 /dev/usb_mtp_gadget
-    chown system mtp /dev/usb_mtp_gadget
     mkdir /dev/socket/mtp 0770 system mtp
+
+    chown root system /sys/devices/platform/msm_hsusb/gadget/wakeup
+    chmod 0220 /sys/devices/platform/msm_hsusb/gadget/wakeup
+    write /sys/class/android_usb/android0/f_mass_storage/rom/file /system/etc/cdrom_install.iso
+    chmod 0444 /sys/class/android_usb/android0/f_mass_storage/rom/file
 
     #OTG Test
     chown system radio /sys/class/host_notify/usb_otg/booster
@@ -573,10 +643,6 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
 
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
-
     # sec_efs_file
     mkdir /efs/sec_efs 0775 radio system
 
@@ -626,6 +692,19 @@ on post-fs-data
     chmod 0775 /efs/.files/.dm33
     chmod 0775 /efs/.files/.mp301
 
+    # NFC local data and nfcee xml storage
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+
+    # DCT(Display Clock Tunning)	- Interface 2.0
+    chown radio system /sys/class/dct/dct_node/data
+    chown radio system /sys/class/dct/dct_node/state
+    chown radio system /sys/class/dct/dct_node/log
+    chown radio system /sys/class/dct/dct_node/enabled
+    chown radio system /sys/class/dct/dct_node/interface
+    chown radio system /sys/class/dct/dct_node/libname
+    chown radio system /sys/class/dct/dct_node/tunned
+
     setprop vold.post_fs_data_done 1
 
     mkdir /data/diag_logs 0777 system system 5
@@ -642,6 +721,13 @@ on property:bluetooth.isEnabled=true
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
+
+on property:sys.boot_completed=1
+    write /dev/kmsg "Boot completed "
+
+on property:ro.use_data_netmgrd=false
+    # netmgr not supported on specific target
+    stop netmgrd
 
 # FM
 on property:hw.fm.init=0
@@ -940,3 +1026,16 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     group system
     disabled
     oneshot
+
+service wfdservice /system/bin/wfdservice
+    class main
+    user system
+    group graphics audio camera inet net_bt net_bt_admin net_bt_stack drmrpc bluetooth media_rw media
+    disabled
+    oneshot
+
+on property:sys.wfdservice=enable
+    start wfdservice
+
+on property:sys.wfdservice=disable
+    stop wfdservice
