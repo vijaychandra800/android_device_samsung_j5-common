@@ -63,6 +63,8 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
                 if(DEBUG)
                     Log.d(TAG, "Screen off!");
 
+                    Device.enableDevices(false);
+
                 // Screen is now off
                 mScreenState = STATE_OFF;
                 break;
@@ -84,6 +86,9 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
 
                                 // Screen is off now
                                 mScreenState = STATE_OFF;
+
+                                Device.enableDevices(false);
+
                                 break;
                             case STATE_ON:
                                 if(DEBUG)
