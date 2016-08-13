@@ -610,6 +610,11 @@ on post-fs-data
     mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
+    # Make WCNSS_qcom_cfg.ini file world-readable
+    copy /system/etc/wifi/WCNSS_qcom_cfg.ini /data/misc/wifi/WCNSS_qcom_cfg.ini
+    chown system wifi /data/misc/wifi/WCNSS_qcom_cfg.ini
+    chmod 0660 /data/misc/wifi/WCNSS_qcom_cfg.ini
+
     # Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
