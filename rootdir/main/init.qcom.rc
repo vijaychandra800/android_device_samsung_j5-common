@@ -85,10 +85,6 @@ on fs
 
     restorecon_recursive /persist
 
-    # fm_radio
-    chmod 0640 /dev/radio0
-    chown system system /dev/radio0
-
     # Audio NXP
     chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
@@ -146,6 +142,14 @@ on boot
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
+
+    # FM
+    chmod 0644 /dev/radio0
+    chown fm_radio fm_radio /dev/radio0
+
+    #Create FM dir for patchdownloader
+    mkdir /data/misc/fm 0770 system system
+    chmod 0770 /data/misc/fm
 
     # for BT MAC address
     mkdir /efs/bluetooth 0775 radio system
