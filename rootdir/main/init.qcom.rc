@@ -77,9 +77,6 @@ on init
 
 on fs
     mount_all fstab.qcom
-    swapon_all fstab.qcom
-    write /proc/sys/vm/swappiness 100
-    setprop ro.config.zram true
 
     chown system radio /efs
     chmod 0771 /efs
