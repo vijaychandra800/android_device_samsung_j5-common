@@ -143,7 +143,6 @@ on boot
     chown bluetooth bluetooth /dev/ttyHS2
 
     # fm_radio
-    insmod /system/lib/modules/radio_iris_transport.ko
     chmod 0640 /dev/radio0
     chown system system /dev/radio0
 
