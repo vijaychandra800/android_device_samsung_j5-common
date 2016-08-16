@@ -81,7 +81,8 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8916 \
-    javax.obex \
+    bluetooth.msm8916 \
+    bluetooth.default \
     com.quicinc.wbc \
     com.qualcomm.qti.smartsearch
 
