@@ -81,7 +81,8 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8916 \
-    com.quicinc.wbc
+    com.quicinc.wbc \
+    com.qualcomm.qti.smartsearch
 
 # Lights
 PRODUCT_PACKAGES += \
