@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8916 \
+    javax.obex \
     com.quicinc.wbc \
     com.qualcomm.qti.smartsearch
 
