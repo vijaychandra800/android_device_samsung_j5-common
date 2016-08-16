@@ -80,7 +80,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8916
+    power.msm8916 \
+    com.quicinc.wbc
 
 # Lights
 PRODUCT_PACKAGES += \
