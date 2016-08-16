@@ -82,11 +82,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8916 \
     com.quicinc.wbc \
-    com.qualcomm.qti.smartsearch \
-    bluetooth.default \
-    BluetoothExt \
-    com.android.vcard \
-    libbluetooth_jni
+    com.qualcomm.qti.smartsearch
 
 # Lights
 PRODUCT_PACKAGES += \
