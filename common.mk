@@ -80,7 +80,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8916
+    power.msm8916 \
+    bluetooth.default
 
 # Lights
 PRODUCT_PACKAGES += \
