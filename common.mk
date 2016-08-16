@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8916 \
     com.quicinc.wbc \
-    com.qualcomm.qti.smartsearch
+    com.qualcomm.qti.smartsearch \
+    bluetooth.default
 
 # Lights
 PRODUCT_PACKAGES += \
