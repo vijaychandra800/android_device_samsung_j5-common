@@ -84,7 +84,9 @@ PRODUCT_PACKAGES += \
     com.quicinc.wbc \
     com.qualcomm.qti.smartsearch \
     bluetooth.default \
-    BluetoothExt
+    BluetoothExt \
+    com.android.vcard \
+    libbluetooth_jni
 
 # Lights
 PRODUCT_PACKAGES += \
