@@ -81,7 +81,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.msm8916 \
-    bluetooth.default
+    com.quicinc.wbcservice
 
 # Lights
 PRODUCT_PACKAGES += \
