@@ -145,8 +145,8 @@ on boot
     chown bluetooth bluetooth /dev/ttyHS2
 
     # fm_radio
-    chmod 0644 /dev/radio0
-    chown fm_radio fm_radio /dev/radio0
+    chmod 0640 /dev/radio0
+    chown system system /dev/radio0
 
     #Create FM dir for patchdownloader
     mkdir /data/misc/fm 0770 system system
