@@ -121,8 +121,7 @@ PRODUCT_PACKAGES += \
     FM2 \
     FMRecord \
     libqcomfm_jni \
-    qcom.fmradio \
-    qcom.fmradio.xml
+    qcom.fmradio
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
