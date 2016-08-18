@@ -221,8 +221,6 @@
 #latin Mobile TV
 /dev/isdbt                0660   system     system
 
-# Add device block for FRP
-/dev/block/bootdevice/by-name/config    0660   system     system
 #cpufreq_governor
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/above_hispeed_delay    0660  system system
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/go_hispeed_load        0660  system system
