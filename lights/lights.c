@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "lights.msm8960"
+#define LOG_TAG "lights.msm8916"
 
 #define LOG_NDEBUG 1
 
