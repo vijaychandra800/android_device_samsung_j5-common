@@ -747,9 +747,6 @@ on property:bluetooth.dun.status=running
 on property:bluetooth.dun.status=stopped
     stop bt-dun
 
-on property:ro.bluetooth.ftm_enabled=true
-    start ftmd
-
 on property:bluetooth.startbtsnoop=true
     start btsnoop
 
