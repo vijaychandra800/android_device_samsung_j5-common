@@ -180,8 +180,8 @@ on boot
 
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
     # Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  2097152
-    write /proc/sys/net/core/wmem_max  2097152
+    write /proc/sys/net/core/rmem_max  8388608
+    write /proc/sys/net/core/wmem_max  8388608
 
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
@@ -959,6 +959,13 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
    user root
    disabled
    oneshot
+
+service wlandutservice /system/bin/wlandutservice
+    class main
+    user system
+    group wifi net_raw net_admin system inet
+    disabled
+    oneshot
 
 service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     class late_start
