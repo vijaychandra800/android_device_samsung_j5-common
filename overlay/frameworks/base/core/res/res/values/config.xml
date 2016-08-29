@@ -17,9 +17,8 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
 <resources>
+
     <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">false</bool>
 
@@ -113,9 +112,6 @@
     -->
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- If this is true, the screen will fade off. -->
-    <bool name="config_animateScreenLights">false</bool>
-
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
          should be empty. -->
@@ -141,36 +137,6 @@
          apart and the docks cannot report their true orientation on their own,
          we rely on gravity to determine the effective orientation. -->
     <bool name="config_deskDockEnablesAccelerometer">false</bool>
-
-    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
-
-    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
-         The N entries of this array define N  1 zones as follows:
-         Zone 0:        0 <= LUX < array[0]
-         Zone 1:        array[0] <= LUX < array[1]
-         ...
-         Zone N:        array[N - 1] <= LUX < array[N]
-         Zone N + 1     array[N] <= LUX < infinity
-         Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>15</item>
-        <item>150</item>
-        <item>1000</item>
-        <item>5000</item>
-    </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>20</item>
-        <item>80</item>
-        <item>130</item>
-        <item>190</item>
-        <item>255</item>
-    </integer-array>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
@@ -283,10 +249,16 @@
     <!-- Flag specifying whether VoLTE is available on device -->
     <bool name="config_device_volte_available">true</bool>
 
+    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_volte_available">true</bool>
+
     <!-- Ambient display. -->
-    <integer name="config_screenBrightnessDoze">30</integer>
+    <integer name="config_screenBrightnessDoze">17</integer>
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
     <bool name="config_dozeAfterScreenOff">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Defines the system property to set for performance profile xe: sys.cpu.modes. Leave it
          blank if the device do not support performance profiles -->
