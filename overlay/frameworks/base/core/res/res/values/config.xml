@@ -295,8 +295,6 @@
     <bool name="config_samsung_stk">true</bool>
 
     <bool name="config_device_volte_available">true</bool>
-    <bool name="config_device_volte_vt_available">false</bool>
-    <bool name="config_carrier_volte_vt_available">false</bool>
     <bool name="config_carrier_volte_available">true</bool>
     <bool name="config_carrier_volte_provisioned">false</bool>
     <bool name="config_carrier_volte_tty_supported">true</bool>
