@@ -42,8 +42,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Touch issue workaround
 #PRODUCT_PACKAGES += \
