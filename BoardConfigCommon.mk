@@ -34,7 +34,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/j5-common/include
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK      := device/samsung/j5-common/mkbootimg.mk
-BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=enforcing
+BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
 BOARD_KERNEL_BASE            := 0x80000000
 BOARD_RAMDISK_OFFSET         := 0x02000000
 BOARD_KERNEL_TAGS_OFFSET     := 0x01e00000
@@ -75,6 +75,7 @@ AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
+TARGET_RIL_VARIANT := caf
 
 # PowerHAL
 #TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
