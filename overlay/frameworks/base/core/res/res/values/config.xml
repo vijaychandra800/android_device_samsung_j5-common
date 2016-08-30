@@ -194,6 +194,8 @@
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">5</integer>
     <integer name="config_screenBrightnessSettingMaximum">255</integer>
+    <integer name="config_maximumScreenDimDuration">3500</integer>
+    <fraction name="config_maximumScreenDimRatio">10%</fraction>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">19</integer>
@@ -306,7 +308,7 @@
     <bool name="config_dreamsActivatedOnSleepByDefault">false</bool>
     <bool name="config_dreamsEnabledOnBattery">false</bool>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">false</bool>
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
 </resources>
