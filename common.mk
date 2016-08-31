@@ -80,7 +80,6 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8916 \
     power.qcom \
     com.qualcomm.qti.smartsearch \
     com.quicinc.wbc
