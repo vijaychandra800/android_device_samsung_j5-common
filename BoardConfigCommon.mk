@@ -53,6 +53,9 @@ EXTENDED_FONT_FOOTPRINT := true
 # malloc implementation
 MALLOC_IMPL := dlmalloc
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # CMHW
 BOARD_HARDWARE_CLASS += device/samsung/j5-common/cmhw
 
@@ -82,6 +85,7 @@ TARGET_RIL_VARIANT := caf
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
 WITH_QC_PERF := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -122,6 +126,7 @@ BOARD_VOLD_MAX_PARTITIONS := 65
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
@@ -146,6 +151,15 @@ TARGET_CONTINUOUS_SPLASH_ENABLED := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# QC PROPRIETARY
+ifneq ($(QCPATH),)
+BOARD_USES_QCNE := true
+endif
+
+# Video
+TARGET_HAVE_SIGNED_VENUS_FW := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
