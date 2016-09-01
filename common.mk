@@ -77,6 +77,31 @@ PRODUCT_PACKAGES += \
     librs_jni \
     libtinyxml
 
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
+ifeq ($(BOARD_USES_QCNE),true)
+PRODUCT_PACKAGES += \
+    services-ext \
+    init.cne.rc
+
+PRODUCT_PROPERTY_OVERRIDES +=
+    persist.cne.feature=4
+endif
+
+ifneq ($(QCPATH),)
+PRODUCT_PACKAGES += libOmxVdecHevc
+endif
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
+
+# WiFi Display
+ifneq ($(QCPATH),)
+PRODUCT_BOOT_JARS += WfdCommon
+endif
+
 # Power
 PRODUCT_PACKAGES += \
     power.qcom
