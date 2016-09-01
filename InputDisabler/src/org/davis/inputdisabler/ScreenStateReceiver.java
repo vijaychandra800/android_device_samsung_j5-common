@@ -87,7 +87,7 @@ public class ScreenStateReceiver extends BroadcastReceiver implements SensorEven
                                 // Screen is off now
                                 mScreenState = STATE_OFF;
 
-                                Device.enableDevices(false);
+                                    Device.enableDevices(false);
 
                                 break;
                             case STATE_ON:
