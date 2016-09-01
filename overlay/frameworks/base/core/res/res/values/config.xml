@@ -284,10 +284,10 @@
     <integer name="config_screenBrightnessDoze">30</integer>
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_dreamsSupported">true</bool>
-    <bool name="config_dreamsEnabledByDefault">false</bool>
+    <bool name="config_dreamsEnabledByDefault">true</bool>
     <bool name="config_dreamsActivatedOnDockByDefault">true</bool>
-    <bool name="config_dreamsActivatedOnSleepByDefault">false</bool>
-    <bool name="config_dreamsEnabledOnBattery">false</bool>
+    <bool name="config_dreamsActivatedOnSleepByDefault">true</bool>
+    <bool name="config_dreamsEnabledOnBattery">true</bool>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">false</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
