@@ -175,6 +175,7 @@
     <integer name="config_screenBrightnessSettingMaximum">255</integer>
     <integer name="config_maximumScreenDimDuration">3500</integer>
     <fraction name="config_maximumScreenDimRatio">10%</fraction>
+    <bool name="config_animateScreenLights">false</bool>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">19</integer>
@@ -279,8 +280,9 @@
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
     <!-- Ambient display. -->
-    <integer name="config_screenBrightnessDoze">1</integer>
-    <bool name="config_dozeAfterScreenOff">false</bool>
+    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+    <integer name="config_screenBrightnessDoze">30</integer>
+    <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_dreamsSupported">true</bool>
     <bool name="config_dreamsEnabledByDefault">false</bool>
     <bool name="config_dreamsActivatedOnDockByDefault">true</bool>
