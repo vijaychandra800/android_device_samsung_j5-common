@@ -86,20 +86,25 @@ PRODUCT_PACKAGES += \
     services-ext \
     init.cne.rc
 
-PRODUCT_PROPERTY_OVERRIDES +=
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=4
 endif
 
 ifneq ($(QCPATH),)
-PRODUCT_PACKAGES += libOmxVdecHevc
+PRODUCT_PACKAGES += \
+    libOmxVdecHevc
 endif
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
+PRODUCT_BOOT_JARS += \
+    qcom.fmradio
+
 # WiFi Display
 ifneq ($(QCPATH),)
-PRODUCT_BOOT_JARS += WfdCommon
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 endif
 
 # Power
