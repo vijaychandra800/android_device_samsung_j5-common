@@ -173,8 +173,8 @@
          The user is forbidden from setting the brightness below this level. -->
     <integer name="config_screenBrightnessSettingMinimum">5</integer>
     <integer name="config_screenBrightnessSettingMaximum">255</integer>
-    <integer name="config_maximumScreenDimDuration">3500</integer>
-    <fraction name="config_maximumScreenDimRatio">10%</fraction>
+    <integer name="config_maximumScreenDimDuration">7000</integer>
+    <fraction name="config_maximumScreenDimRatio">20%</fraction>
     <bool name="config_animateScreenLights">false</bool>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
