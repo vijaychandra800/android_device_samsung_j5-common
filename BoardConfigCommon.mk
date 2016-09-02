@@ -81,7 +81,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
 TARGET_RIL_VARIANT := caf
 
 # PowerHAL
-#TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
+TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
 WITH_QC_PERF := true
