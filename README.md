@@ -3,7 +3,7 @@ Device tree for Samsung Galaxy J5
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Quad-core 1.2 GHz Cortex-A53
+CPU     | Quad-core 1.2 GHz Cortex-A53 (OC to 1.8 GHz)
 CHIPSET | Qualcomm MSM8916 Snapdragon 410
 GPU     | Adreno 306
 Memory  | 1.5GB RAM
