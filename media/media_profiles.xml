@@ -306,10 +306,10 @@
              channels="2" />
     </EncoderProfile>
 
-        <ImageEncoding quality="100" />
     <ImageEncoding quality="100" />
     <ImageEncoding quality="100" />
-        <ImageDecoding memCap="20000000" />
+    <ImageEncoding quality="100" />
+    <ImageDecoding memCap="20000000" />
 
     </CamcorderProfiles>
 
