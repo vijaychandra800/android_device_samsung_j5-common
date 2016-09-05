@@ -52,7 +52,7 @@
     </string-array>
 
     <!-- Configuration to sending and receiving Mms when mobile data is disable.-->
-    <bool name="config_enable_mms_with_mobile_data_off">false</bool>
+    <bool name="config_enable_mms_with_mobile_data_off">true</bool>
 
     <!-- Default interface to monitor data use -->
     <string name="config_datause_iface" translatable="false">rmnet0</string>
