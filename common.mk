@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    WfdCommon \
     copybit.msm8916 \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
