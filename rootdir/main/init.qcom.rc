@@ -287,6 +287,9 @@ on boot
     chown system radio /sys/class/sensors/sensor_dev/flush
 
     # Vibrator
+    chmod 0644 /sys/class/timed_output/vibrator/intensity
+    chown 0644 /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/timed_output/vibrator/intensity
     chmod 0644 /sys/class/timed_output/vibrator/pwm_value
     chown system system /sys/class/timed_output/vibrator/pwm_value
     chown system system /sys/class/timed_output/vibrator/enable
