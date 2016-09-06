@@ -57,6 +57,8 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudiopolicymanager \
+    libmedia_helper \
+    libserviceutility \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing
