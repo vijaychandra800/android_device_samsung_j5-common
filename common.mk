@@ -56,11 +56,8 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libaudiopolicymanager \
-    libaudiopolicymanagerdefault \
-    libmedia_helper \
-    libserviceutility \
-    libsoundtrigger \
+    libmediaplayerservice \
+    libstagefright_nuplayer \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing
