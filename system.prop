@@ -67,6 +67,7 @@ af.resampler.quality=4
 ro.fm.transmitter=false
 ro.hdmi.enable=true
 persist.speaker.prot.enable=false
+audio.deep_buffer.media=true
 
 # Media
 mm.enable.qcom_parser=3183219
