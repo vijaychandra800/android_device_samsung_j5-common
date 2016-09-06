@@ -39,6 +39,7 @@ ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
 ro.media.dec.jpeg.memcap=80000000
 ro.media.enc.jpeg.quality=100
+persist.demo.hdmirotationlock=false
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -63,6 +64,8 @@ lpa.use-stagefright=false
 tunnel.decode=false
 af.resampler.quality=4
 ro.fm.transmitter=false
+ro.hdmi.enable=true
+persist.speaker.prot.enable=false
 
 # Media
 mm.enable.qcom_parser=3183219
