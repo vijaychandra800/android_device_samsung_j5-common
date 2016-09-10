@@ -112,8 +112,8 @@ ro.gps.agps_provider=1
 ro.pip.gated=0
 
 # WFD
-persist.debug.wfd.enable=1
-persist.hwc.enable_vds=1
+#persist.debug.wfd.enable=1
+#persist.hwc.enable_vds=1
 
 # Time
 persist.timed.enable=true
