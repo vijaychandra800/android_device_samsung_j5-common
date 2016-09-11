@@ -265,6 +265,11 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    telephony.lteOnCdmaDevice=0 \
+    camera2.portability.force_api=1 \
+    persist.cne.feature=0 \
+    persist.radio.lte_vrte_ltd=1 \
+    persist.data.netmgrd.qos.enable=false \
     ro.sys.usb.default.config=mtp \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true \
@@ -272,7 +277,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-Xmx=512m \
     dalvik.vm.image-dex2oat-Xms=64m \
     dalvik.vm.image-dex2oat-Xmx=64m \
-    ro.dalvik.vm.native.bridge=0
+    ro.dalvik.vm.native.bridge=0 \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
