@@ -66,6 +66,7 @@ lpa.use-stagefright=false
 af.resampler.quality=4
 ro.fm.transmitter=false
 ro.hdmi.enable=true
+com.qc.hdmi_out=true
 persist.speaker.prot.enable=false
 audio.deep_buffer.media=true
 
