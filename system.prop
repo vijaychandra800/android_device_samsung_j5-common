@@ -39,6 +39,7 @@ ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
 ro.media.dec.jpeg.memcap=80000000
 ro.media.enc.jpeg.quality=100
+persist.demo.hdmirotationlock=false
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -64,6 +65,7 @@ lpa.decode=false
 lpa.use-stagefright=false
 af.resampler.quality=4
 ro.fm.transmitter=false
+ro.hdmi.enable=true
 persist.speaker.prot.enable=false
 audio.deep_buffer.media=true
 
@@ -108,6 +110,10 @@ persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 ro.pip.gated=0
+
+# WFD
+persist.debug.wfd.enable=1
+persist.hwc.enable_vds=1
 
 # Time
 persist.timed.enable=true
