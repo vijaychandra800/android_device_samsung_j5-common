@@ -267,7 +267,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.sys.usb.default.config=mtp \
     persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true
+    persist.sys.isUsbOtgEnabled=true \
+    dalvik.vm.dex2oat-Xms=64m \
+    dalvik.vm.dex2oat-Xmx=512m \
+    dalvik.vm.image-dex2oat-Xms=64m \
+    dalvik.vm.image-dex2oat-Xmx=64m \
+    ro.dalvik.vm.native.bridge=0
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
