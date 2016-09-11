@@ -95,6 +95,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN 		 := true
