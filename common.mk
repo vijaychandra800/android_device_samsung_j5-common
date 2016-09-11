@@ -270,7 +270,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.cne.feature=0 \
     persist.radio.lte_vrte_ltd=1 \
     persist.data.netmgrd.qos.enable=false \
-    ro.sys.usb.default.config=mtp \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true \
     dalvik.vm.dex2oat-Xms=64m \
