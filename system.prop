@@ -67,7 +67,6 @@ lpa.use-stagefright=false
 af.resampler.quality=4
 ro.fm.transmitter=false
 persist.speaker.prot.enable=false
-audio.deep_buffer.media=true
 
 # Media
 mm.enable.qcom_parser=3183219
