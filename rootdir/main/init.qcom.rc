@@ -781,6 +781,54 @@ service btsnoop /system/bin/btsnoop
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
+on property:ro.data.large_tcp_window_size=true
+    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+    write /proc/sys/net/ipv4/tcp_adv_win_scale 2
+
+service atfwd /system/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+
+service hvdcp /system/bin/hvdcp
+    class core
+    user root
+    disabled
+
+on property:persist.usb.hvdcp.detect=true
+    start hvdcp
+
+on property:persist.usb.hvdcp.detect=false
+    stop hvdcp
+
+service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+    class core
+    user root
+    group root
+    disabled
+
+service profiler_daemon /system/bin/profiler_daemon
+    class late_start
+    user root
+    group root
+    disabled
+
+on property:crypto.driver.load=1
+    insmod /system/lib/modules/qce.ko
+    insmod /system/lib/modules/qcedev.ko
+
+service drmdiag /system/bin/drmdiagapp
+    class late_start
+    user root
+    disabled
+    oneshot
+
+on property:drmdiag.load=1
+    start drmdiag
+
+on property:drmdiag.load=0
+    stop drmdiag
+
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
 
@@ -922,6 +970,35 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
+
+service ptt_socket_app /system/bin/ptt_socket_app -d
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service ptt_ffbm /system/bin/ptt_socket_app -f -d
+    user root
+    group root
+    disabled
+    oneshot
+
+service ftm_ffbm /system/bin/ftmdaemon
+    user root
+    group root
+    disabled
+    oneshot
+
+service cnss_diag /system/bin/cnss_diag --q
+    class main
+    user root
+    group root
+    oneshot
+
+service cnss-daemon /system/bin/cnss-daemon -n -l
+    class late_start
+
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
     class late_start
     disabled
@@ -963,6 +1040,21 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
     disabled
     oneshot
 
+service mfgloader /system/bin/mfgloader
+    class main
+    disabled
+    oneshot
+
+service macloader /system/bin/macloader
+    class main
+    oneshot
+
+on property:init.svc.macloader=stopped
+    chown system root /data/.cid.info
+    chmod 0664 /data/.cid.info
+    chown system root /data/.rev
+    chmod 0664 /data/.rev
+
 service wlandutservice /system/bin/wlandutservice
     class main
     user system
@@ -976,6 +1068,14 @@ service hostapd /system/bin/hostapd -dd /data/misc/wifi/hostapd.conf
     group root
     oneshot
     disabled
+
+service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
+    class late_start
+    group net_bt_admin inet radio wifi
+    disabled
+
+on property:persist.ims.regmanager.mode=1
+    start ims_regmanager
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
@@ -1033,6 +1133,21 @@ on property:persist.usb.chgdisabled=1
 
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
+
+service charger_monitor /system/bin/charger_monitor
+    user root
+    group root
+    disabled
+
+service qbcharger /charger -m 1
+    disabled
+    oneshot
+
+on property:sys.qbcharger.enable=true
+    start qbcharger
+
+on property:sys.qbcharger.enable=false
+    stop qbcharger
 
 service qseecomd /system/bin/qseecomd
     class core
