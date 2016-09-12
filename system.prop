@@ -29,7 +29,12 @@ persist.dpm.feature=0
 
 # Display
 debug.sf.hw=1
+persist.sys.ui.hw=1
+debug.performance.tuning=1
+video.accelerate.hw=1
+debug.egl.profiler=1
 debug.egl.hw=1
+debug.composition.type=gpu
 dev.pm.dyn_samplingrate=1
 debug.mdpcomp.idletime=600
 ro.sf.lcd_density=320
@@ -46,6 +51,7 @@ persist.demo.hdmirotationlock=false
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
+ro.ril.enable.amr.wideband=1
 audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 audio.offload.min.duration.secs=30
@@ -92,6 +98,9 @@ ro.chipname=MSM8916
 ro.qualcomm.cabl=2
 ro.warmboot.capability=1
 persist.fuse_sdcard=true
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+ro.config.nocheckin=1
 
 # Nitz
 persist.rild.nitz_plmn=""
