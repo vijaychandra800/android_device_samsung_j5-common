@@ -120,6 +120,27 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     setprop qcom.audio.init complete
 
+    # setup permissions for fb1 related nodes
+    chown system graphics /sys/class/graphics/fb1/hpd
+    chown system system /sys/class/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
+    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
+    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
+
+    ln -s /dev/graphics/fb1 /dev/graphics/hdmi
+
+    # Change owner and group for media server and surface flinger
+    chown system system /sys/devices/virtual/graphics/fb1/format_3d
+
+    # Set the property to indicate type of virtual display to 0
+    # 0 indicates that virtual display is not a Wifi display and that the
+    # session is not exercised through RemoteDisplay in the android framework
+    setprop persist.sys.wfd.virtual 0
+
+    # Set this property so surfaceflinger is not started by system_init
+    setprop system_init.startsurfaceflinger 0
+
 on boot
     # Bluetooth
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -230,25 +251,6 @@ on boot
     mkdir /data/nfc/param 0700 nfc nfc
     chmod 0660 /dev/pn547
     chown nfc nfc /dev/pn547
-
-    # setup permissions for fb1 related nodes
-    chown system graphics /sys/class/graphics/fb1/hpd
-    chown system system /sys/class/graphics/fb1/hdcp/tp
-    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
-    chmod 0664 /sys/devices/virtual/graphics/fb1/hdcp/tp
-    chmod 0664 /sys/devices/virtual/graphics/fb1/video_mode
-    chmod 0664 /sys/devices/virtual/graphics/fb1/format_3d
-
-    # Change owner and group for media server and surface flinger
-    chown system system /sys/devices/virtual/graphics/fb1/format_3d
-
-    # Set the property to indicate type of virtual display to 0
-    # 0 indicates that virtual display is not a Wifi display and that the
-    # session is not exercised through RemoteDisplay in the android framework
-    setprop persist.sys.wfd.virtual 0
-
-    # Set this property so surfaceflinger is not started by system_init
-    setprop system_init.startsurfaceflinger 0
 
     # Accelerometer_sensor
     chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
