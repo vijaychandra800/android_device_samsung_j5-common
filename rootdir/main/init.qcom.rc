@@ -795,6 +795,29 @@ service btsnoop /system/bin/btsnoop
     disabled
     oneshot
 
+service ipacm-diag /system/bin/ipacm-diag
+    class main
+    user system
+    socket ipacm_log_file dgram 660 system net_admin
+    group net_admin qcom_diag
+    disabled
+
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
+    disabled
+
+service qti /system/vendor/bin/qti
+    class main
+    disabled
+
+service sensors /system/bin/sensors.qcom
+    class late_start
+    user root
+    group root
+    disabled
+
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
@@ -889,6 +912,13 @@ service profiler_daemon /system/bin/profiler_daemon
     user root
     group root
     disabled
+
+service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
+    class late_start
+    user root
+    group bluetooth net_bt_admin misc net_bt_stack qcom_diag
+    disabled
+    oneshot
 
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
