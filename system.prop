@@ -34,6 +34,7 @@ debug.performance.tuning=1
 video.accelerate.hw=1
 debug.egl.profiler=1
 debug.egl.hw=1
+hw3d.force=1
 debug.composition.type=gpu
 dev.pm.dyn_samplingrate=1
 debug.mdpcomp.idletime=600
