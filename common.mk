@@ -20,6 +20,8 @@ $(call inherit-product-if-exists, vendor/samsung/j5-common/j5-common-vendor.mk)
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5-common/overlay
 
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
