@@ -1265,6 +1265,11 @@ on property:sys.qbcharger.enable=true
 on property:sys.qbcharger.enable=false
     stop qbcharger
 
+service battery_monitor /system/bin/battery_monitor
+    user system
+    group system
+    disabled
+
 service qseecomd /system/bin/qseecomd
     class core
     user root
@@ -1296,6 +1301,34 @@ service wcnss-service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
+
+service diag_uart_log /system/bin/diag_uart_log
+    class main
+    user root
+    group radio
+
+service diag_mdlog_start /system/bin/diag_mdlog
+    class late_start
+    user shell
+    group system qcom_diag sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_mdlog_stop /system/bin/diag_mdlog -k
+    class late_start
+    user shell
+    group system qcom_diag sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service qlogd /system/xbin/qlogd
+    socket qlogd stream 0662 system system
+    class main
+    disabled
+on property:persist.sys.qlogd=1
+    start qlogd
+on property:persist.sys.qlogd=0
+    stop qlogd
 
 # Dual-sim support
 on property:ro.multisim.simslotcount=2
