@@ -750,6 +750,9 @@ on property:bluetooth.sap.status=stopped
 on property:bluetooth.dun.status=running
     start bt-dun
 
+on property:ro.bluetooth.ftm_enabled=true
+    start ftmd
+
 on property:bluetooth.dun.status=stopped
     stop bt-dun
 
@@ -840,6 +843,17 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+
+on property:persist.radio.atfwd.start=false
+    stop atfwd
+
+service cnd /system/bin/cnd
+    class late_start
+    socket cnd stream 660 root inet
+
+service dpmd /system/bin/dpmd
+    class late_start
+    socket dpmd stream 660 root system
 
 service hvdcp /system/bin/hvdcp
     class core
