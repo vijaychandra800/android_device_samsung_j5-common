@@ -44,7 +44,6 @@ persist.demo.hdmirotationlock=false
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
-ro.ril.enable.amr.wideband=1
 audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 audio.offload.min.duration.secs=30
@@ -90,12 +89,7 @@ bluetooth.hfp.client=1
 ro.chipname=MSM8916
 ro.qualcomm.cabl=2
 ro.warmboot.capability=1
-persist.android.strictmode=0
 persist.fuse_sdcard=true
-ro.kernel.android.checkjni=0
-ro.kernel.checkjni=0
-ro.config.nocheckin=1
-ro.HOME_APP_ADJ=1
 
 # Nitz
 persist.rild.nitz_plmn=""
