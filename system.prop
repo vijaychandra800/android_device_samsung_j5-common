@@ -99,6 +99,7 @@ bluetooth.hfp.client=1
 ro.chipname=MSM8916
 ro.qualcomm.cabl=2
 ro.warmboot.capability=1
+persist.android.strictmode=0
 persist.fuse_sdcard=true
 ro.kernel.android.checkjni=0
 ro.kernel.checkjni=0
