@@ -58,8 +58,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
-    libmediaplayerservice \
-    libstagefright_nuplayer \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing
@@ -80,9 +78,6 @@ PRODUCT_PACKAGES += \
     liboverlay \
     librs_jni \
     libtinyxml
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio
@@ -112,9 +107,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
-    libextmedia_jni \
-    qcmediaplayer \
-    libdashplayer \
     libOmxVidcCommon \
     libOmxVdecHevc \
     libOmxVenc \
