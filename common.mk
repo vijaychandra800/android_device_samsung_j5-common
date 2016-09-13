@@ -76,7 +76,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     liboverlay \
-    librs_jni \
     libtinyxml
 
 PRODUCT_BOOT_JARS += \
@@ -105,6 +104,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    qcmediaplayer \
+    libdashplayer \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
     libOmxVidcCommon \
