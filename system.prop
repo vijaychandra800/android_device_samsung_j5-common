@@ -103,6 +103,7 @@ persist.fuse_sdcard=true
 ro.kernel.android.checkjni=0
 ro.kernel.checkjni=0
 ro.config.nocheckin=1
+ro.HOME_APP_ADJ=1
 
 # Nitz
 persist.rild.nitz_plmn=""
