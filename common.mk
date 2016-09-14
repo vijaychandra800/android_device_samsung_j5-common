@@ -81,11 +81,11 @@ PRODUCT_PACKAGES += \
     tcmiface \
     WfdCommon \
     oem-services \
+    okhttp \
     org.codeaurora.Performance
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio \
-    tcmiface \
     WfdCommon \
     oem-services \
     org.codeaurora.Performance
