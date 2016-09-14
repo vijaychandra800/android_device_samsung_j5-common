@@ -211,6 +211,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/acdb/Speaker_cal.acdb:system/etc/Speaker_cal.acdb \
     $(LOCAL_PATH)/audio/Tfa9895.cnt:system/etc/Tfa9895.cnt
 
+# Bluetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/iop_bt.db:system/etc/bluetooth/iop_bt.db \
+    $(LOCAL_PATH)/configs/iop_device_list.conf:system/etc/bluetooth/iop_device_list.conf
+
 # Media Profile
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
