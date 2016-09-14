@@ -41,6 +41,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
 
+# for off charging mode
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
 # Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
@@ -72,6 +77,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     liboverlay \
+    librs_jni \
+    libgenlock \
     libtinyxml
 
 PRODUCT_PACKAGES += \
@@ -323,9 +330,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/parted:recovery/root/sbin/parted \
     $(LOCAL_PATH)/recovery/parted:system/bin/parted
 
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # Dalvik heap config
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
