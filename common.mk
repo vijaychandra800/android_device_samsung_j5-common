@@ -124,6 +124,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libmm-omxcore \
+    msm-vidc-test \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
     libOmxVidcCommon \
