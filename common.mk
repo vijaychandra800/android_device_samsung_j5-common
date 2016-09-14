@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_PACKAGES += \
-    voip-common
+    voip-common \
     ims-common \
     imsmanager \
     commonimsinterface \
