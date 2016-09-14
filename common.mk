@@ -85,9 +85,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio \
-    qcmediaplayer \
-    oem-services \
-    org.codeaurora.Performance
+    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
