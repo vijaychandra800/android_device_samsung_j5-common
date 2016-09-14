@@ -74,7 +74,6 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
-# Tcmiface
 PRODUCT_PACKAGES += \
     imsmanager \
     commonimsinterface \
@@ -85,8 +84,6 @@ PRODUCT_PACKAGES += \
     org.codeaurora.Performance
 
 PRODUCT_BOOT_JARS += \
-    imsmanager \
-    commonimsinterface \
     qcom.fmradio \
     qcmediaplayer \
     oem-services \
