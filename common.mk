@@ -85,8 +85,10 @@ PRODUCT_PACKAGES += \
     org.codeaurora.Performance
 
 PRODUCT_BOOT_JARS += \
+    imsmanager \
+    commonimsinterface \
     qcom.fmradio \
-    WfdCommon \
+    qcmediaplayer \
     oem-services \
     org.codeaurora.Performance
 
