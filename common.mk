@@ -45,10 +45,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     SamsungDoze
 
-# Touch issue workaround
-#PRODUCT_PACKAGES += \
-#    InputDisabler
-
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -78,8 +74,21 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Tcmiface
+PRODUCT_PACKAGES += \
+    imsmanager \
+    commonimsinterface \
+    tcmiface \
+    WfdCommon \
+    oem-services \
+    org.codeaurora.Performance
+
 PRODUCT_BOOT_JARS += \
-    qcom.fmradio
+    qcom.fmradio \
+    tcmiface \
+    WfdCommon \
+    oem-services \
+    org.codeaurora.Performance
 
 # Power
 PRODUCT_PACKAGES += \
@@ -117,6 +126,7 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libextmedia_jni \
     libstagefrighthw
 
 # FM
@@ -172,6 +182,15 @@ PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
     libantradio
+
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libstlport
+
+# Connectivity Engine support
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -244,8 +263,7 @@ PRODUCT_PACKAGES += \
     libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    hostapd \
-    wcnss_service
+    hostapd
 
 # CRDA
 PRODUCT_PACKAGES += \
