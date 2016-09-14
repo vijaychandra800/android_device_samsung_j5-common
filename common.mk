@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_PACKAGES += \
+    ims-common \
     imsmanager \
     commonimsinterface \
     tcmiface \
