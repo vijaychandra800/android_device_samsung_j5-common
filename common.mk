@@ -83,8 +83,15 @@ PRODUCT_PACKAGES += \
     okhttp \
     org.codeaurora.Performance
 
+# Media
+PRODUCT_PACKAGES += \
+    qcmediaplayer \
+    libdashplayer
+
 PRODUCT_BOOT_JARS += \
-    qcom.fmradio \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
 # Power
@@ -110,8 +117,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    qcmediaplayer \
-    libdashplayer \
     libc2dcolorconvert \
     libdivxdrmdecrypt \
     libOmxVidcCommon \
