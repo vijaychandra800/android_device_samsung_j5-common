@@ -192,16 +192,12 @@ etc/firmware/leia_pm4_470.fw
 
 # Media
 lib/libOmxVdecHevc.so
-vendor/lib/libDivxDrm.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libI420colorconvert.so
-vendor/lib/libmmosal.so
-vendor/lib/libmmparser.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libHevcSwDecoder.so
 
 # Perf
@@ -288,7 +284,9 @@ lib/libsamsungRecord_ns.so
 lib/lib_SamsungRec_V04013.so
 lib/lib_Samsung_Resampler.so
 lib/libsamsungVoipResampler.so
+lib/lib_SoundBooster_ver608.so
 lib/lib_SoundAlive_play_plus_ver126a.so
+lib/lib_SoundAlive_3DPosition_ver107.so
 lib/lib_soundaliveresampler.so
 lib/lib_SoundAlive_SRC192_ver205.so
 lib/lib_SoundAlive_ver118t.so
