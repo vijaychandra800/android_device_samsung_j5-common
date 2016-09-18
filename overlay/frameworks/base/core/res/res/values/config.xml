@@ -290,6 +290,6 @@
     <bool name="config_dreamsEnabledOnBattery">true</bool>
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">false</bool>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
-    <bool name="config_suspendWhenScreenOffDueToProximity">false</bool>
+    <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
 </resources>
