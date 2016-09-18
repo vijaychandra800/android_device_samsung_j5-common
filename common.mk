@@ -126,11 +126,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
-    libc2dcolorconvert \
-    libdivxdrmdecrypt \
     libOmxVidcCommon \
-    libOmxVdecHevc \
     libOmxVenc \
     libOmxVdec \
     libOmxCore \
@@ -310,19 +306,14 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.radio.lte_vrte_ltd=1 \
     persist.data.netmgrd.qos.enable=false \
     persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true \
-    dalvik.vm.dex2oat-Xms=64m \
-    dalvik.vm.dex2oat-Xmx=512m \
-    dalvik.vm.image-dex2oat-Xms=64m \
-    dalvik.vm.image-dex2oat-Xmx=64m \
-    ro.dalvik.vm.native.bridge=0 \
+    persist.sys.isUsbOtgEnabled=true
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=J5RIL \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
-    ro.data.large_tcp_window_size=true \
+    ro.data.large_tcp_window_size=true
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -332,9 +323,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_PATH)/recovery/parted:recovery/root/sbin/parted \
     $(LOCAL_PATH)/recovery/parted:system/bin/parted
-
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
