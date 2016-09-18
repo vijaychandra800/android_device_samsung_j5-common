@@ -33,6 +33,7 @@ bin/fm_qsoc_patches
 
 # Camera
 bin/mm-qcamera-daemon
+lib/libTsAf.so
 lib/libqomx_core.so
 lib/hw/camera.msm8916.so
 vendor/lib/libactuator_dw9806_camcorder.so
