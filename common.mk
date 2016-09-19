@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_PACKAGES += \
+    ethernet-service \
     voip-common \
     ims-common \
     imsmanager \
@@ -311,8 +312,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=J5RIL \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
     ro.data.large_tcp_window_size=true
 
 # We have enough storage space to hold precise GC data
