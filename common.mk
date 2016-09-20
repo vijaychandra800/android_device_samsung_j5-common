@@ -77,6 +77,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     liboverlay \
+    libqservice \
+    libhdmi \
     librs_jni \
     libgenlock \
     libtinyxml
