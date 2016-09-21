@@ -314,7 +314,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=J5RIL \
-    ro.data.large_tcp_window_size=true
+    ro.data.large_tcp_window_size=true \
+    dalvik.vm.heapgrowthlimit=128m
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -330,4 +331,3 @@ $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # Dalvik heap config
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
