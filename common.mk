@@ -173,10 +173,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Filesystem
-PRODUCT_PACKAGES += \
-    fsck.f2fs
-
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapers \
