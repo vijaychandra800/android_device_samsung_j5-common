@@ -257,7 +257,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
     $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml \
-    $(LOCAL_PATH)/configs/qmi_config.xml:system/etc/data/qmi_config.xml
+    $(LOCAL_PATH)/configs/qmi_config.xml:system/etc/data/qmi_config.xml \
+    $(LOCAL_PATH)/configs/nwk_info.xml:system/etc/nwk_info.xml
+
+# Alsa
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/alsa.conf:system/usr/share/alsa/alsa.conf
 
 # GPS/location security configuration file
 PRODUCT_COPY_FILES += \
