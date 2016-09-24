@@ -36,6 +36,7 @@ ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
 ro.media.dec.jpeg.memcap=80000000
 ro.media.enc.jpeg.quality=100
+ro.hdmi.enable=true
 persist.demo.hdmirotationlock=false
 
 # Perf
