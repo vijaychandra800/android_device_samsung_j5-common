@@ -46,6 +46,10 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
+# Filesystem
+PRODUCT_PACKAGES += \
+    fsck.f2fs
+
 # Doze
 PRODUCT_PACKAGES += \
     SamsungDoze
