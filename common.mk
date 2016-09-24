@@ -61,6 +61,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
+    libsoundtriggerservice \
     libqcomvoiceprocessing
 
 # TinyAlsa utils
