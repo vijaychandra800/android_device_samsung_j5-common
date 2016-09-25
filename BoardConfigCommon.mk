@@ -74,7 +74,6 @@ AUDIO_FEATURE_ENABLED_HFP := true
 AUDIO_FEATURE_ENABLED_USBAUDIO := true
 AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 AUDIO_FEATURE_ENABLED_ANC_HEADSET := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
@@ -92,7 +91,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Wifi
 BOARD_HAS_QCOM_WLAN 		 := true
