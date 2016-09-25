@@ -61,10 +61,11 @@ ro.fm.transmitter=false
 persist.speaker.prot.enable=false
 
 # Audio FX
-lpa.decode=false
-lpa.use-stagefright=false
+tunnel.audio.encode=false
 tunnel.decode=false
 tunnel.audiovideo.decode=false
+lpa.decode=false
+lpa.use-stagefright=false
 
 # Media
 mm.enable.qcom_parser=3183219
