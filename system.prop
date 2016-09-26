@@ -87,7 +87,7 @@ bluetooth.hfp.client=1
 
 # Misc.
 ro.chipname=MSM8916
-ro.qualcomm.cabl=2
+ro.qualcomm.cabl=0
 ro.warmboot.capability=1
 persist.fuse_sdcard=true
 
