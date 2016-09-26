@@ -16,5 +16,5 @@
 
 <resources>
      <!-- This device implements a noise suppression device for in call audio-->
-     <bool name="has_in_call_noise_suppression">true</bool>
+     <bool name="has_in_call_noise_suppression">false</bool>
 </resources>
