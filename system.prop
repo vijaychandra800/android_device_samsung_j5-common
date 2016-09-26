@@ -32,7 +32,6 @@ dev.pm.dyn_samplingrate=1
 persist.hwc.mdpcomp.enable=true
 persist.hwc.ptor.enable=true
 debug.mdpcomp.logs=0
-dalvik.vm.heapsize=36m
 ro.sf.lcd_density=320
 ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
@@ -69,7 +68,6 @@ tunnel.audio.encode=false
 #lpa.use-stagefright=false
 
 # Media
-mm.enable.qcom_parser=3183219
 camera2.portability.force_api=1
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
