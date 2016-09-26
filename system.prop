@@ -60,7 +60,6 @@ ro.qc.sdk.audio.ssr=false
 use.voice.path.for.pcm.voip=true
 af.resampler.quality=4
 ro.fm.transmitter=false
-persist.speaker.prot.enable=false
 tunnel.audio.encode=false
 
 # Uncomment if you use custom Audio FX
