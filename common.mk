@@ -313,11 +313,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
-# RIL
+# ETC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=J5RIL \
     ro.data.large_tcp_window_size=true \
-    dalvik.vm.heapgrowthlimit=128m
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapminfree=2m
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
