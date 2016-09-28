@@ -316,6 +316,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # ETC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=J5RIL \
+    ro.telephony.call_ring.multiple=false \
     ro.data.large_tcp_window_size=true \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapminfree=2m
