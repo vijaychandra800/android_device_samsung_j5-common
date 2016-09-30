@@ -29,6 +29,7 @@ debug.egl.hw=1
 dev.pm.dyn_samplingrate=1
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
+dalvik.vm.heapsize=36m
 ro.sf.lcd_density=320
 ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
