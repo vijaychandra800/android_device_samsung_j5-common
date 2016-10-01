@@ -59,7 +59,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.primary.msm8916 \
-    audio_policy.msm8916 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -98,6 +97,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    Snap \
     libmm-qcamera \
     camera.msm8916
 
@@ -138,9 +138,7 @@ PRODUCT_PACKAGES += \
 
 # Configuration scripts
 PRODUCT_PACKAGES += \
-    init.crda.sh \
     init.qcom.bt.sh \
-    init.qcom.coex.sh \
     init.qcom.fm.sh
 
 # Ramdisk
