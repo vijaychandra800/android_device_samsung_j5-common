@@ -370,6 +370,17 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
 
+    # Change PM debug parameters permission
+    chown radio system /sys/module/qpnp_power_on/parameters/reset_enabled
+    chown radio system /sys/module/qpnp_power_on/parameters/wake_enabled
+    chown radio system /sys/module/qpnp_int/parameters/debug_mask
+    chown radio system /sys/module/lpm_levels/parameters/secdebug
+    chmod 0664 /sys/module/qpnp_power_on/parameters/reset_enabled
+    chmod 0664 /sys/module/qpnp_power_on/parameters/wake_enabled
+    chmod 0664 /sys/module/qpnp_int/parameters/debug_mask
+    chmod 0664 /sys/module/lpm_levels/parameters/secdebug
+    chmod 0444 /sys/kernel/wakeup_reasons/last_resume_reason
+
     # Assume SMP uses shared cpufreq policy for all CPUs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
