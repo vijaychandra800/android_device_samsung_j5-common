@@ -97,7 +97,6 @@ PRODUCT_PACKAGES += \
     WfdCommon \
     oem-services \
     okhttp \
-    libqmi \
     org.codeaurora.Performance
 
 # Media
