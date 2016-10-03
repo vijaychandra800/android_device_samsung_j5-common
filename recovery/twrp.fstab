@@ -2,7 +2,6 @@
 
 /aboot            emmc          /dev/block/bootdevice/by-name/aboot
 /sbl1             emmc          /dev/block/bootdevice/by-name/sbl1
-/tz               emmc          /dev/block/bootdevice/by-name/tz
 /rpm              emmc          /dev/block/bootdevice/by-name/rpm
 /boot             emmc          /dev/block/bootdevice/by-name/boot
 /system           ext4          /dev/block/bootdevice/by-name/system
@@ -14,6 +13,5 @@
 /firmware-modem   vfat          /dev/block/bootdevice/by-name/modem          flags=backup=1;display="Modem"
 /firmware         vfat          /dev/block/bootdevice/by-name/apnhlos        flags=backup=1;display="Firmware"
 /hidden           ext4          /dev/block/bootdevice/by-name/hidden         flags=display="Hidden";wipeingui
-/persistent       emmc          /dev/block/bootdevice/by-name/persistent     flags=display="Persistent";wipeingui
 /sdcard1          auto          /dev/block/mmcblk1p1 /dev/block/mmcblk1      flags=display="Micro SDcard";storage;wipeingui;removable;andsec
 /usb_otg          auto          /dev/block/sda1	     /dev/block/sda          flags=display="USB-OTG";storage;wipeingui;removable
