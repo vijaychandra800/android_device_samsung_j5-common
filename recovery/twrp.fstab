@@ -1,10 +1,18 @@
 # mount point	fstype	      device		          	[device2]              fstype2
 
-/system       ext4          /dev/block/bootdevice/by-name/system
-/data         ext4          /dev/block/bootdevice/by-name/userdata       length=-16384
-/cache        ext4          /dev/block/bootdevice/by-name/cache
-/boot         emmc          /dev/block/bootdevice/by-name/boot
-/recovery     emmc          /dev/block/bootdevice/by-name/recovery
-
-/external_sd  auto          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="Micro SDcard";storage;wipeingui;removable;andsec
-/usb_otg      auto          /dev/block/sda1	      /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable
+/aboot            emmc          /dev/block/bootdevice/by-name/aboot
+/sbl1             emmc          /dev/block/bootdevice/by-name/sbl1
+/tz               emmc          /dev/block/bootdevice/by-name/tz
+/rpm              emmc          /dev/block/bootdevice/by-name/rpm
+/boot             emmc          /dev/block/bootdevice/by-name/boot
+/system           ext4          /dev/block/bootdevice/by-name/system
+/cache            ext4          /dev/block/bootdevice/by-name/cache
+/data             ext4          /dev/block/bootdevice/by-name/userdata       length=-16384
+/recovery         emmc          /dev/block/bootdevice/by-name/recovery       flags=backup=1
+/efs              ext4          /dev/block/bootdevice/by-name/efs            flags=backup=1;display="EFS"
+/persist          ext4          /dev/block/bootdevice/by-name/persist        flags=backup=1;display="Persist"
+/firmware-modem   vfat          /dev/block/bootdevice/by-name/modem          flags=backup=1;display="Modem"
+/firmware         vfat          /dev/block/bootdevice/by-name/apnhlos        flags=backup=1;display="Firmware"
+/hidden           ext4          /dev/block/bootdevice/by-name/hidden         flags=display="Hidden";wipeingui
+/external_sd      auto          /dev/block/mmcblk1p1 /dev/block/mmcblk1      flags=display="Micro SDcard";storage;wipeingui;removable;andsec
+/usb_otg          auto          /dev/block/sda1	     /dev/block/sda          flags=display="USB-OTG";storage;wipeingui;removable
