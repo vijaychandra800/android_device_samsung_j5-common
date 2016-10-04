@@ -82,6 +82,7 @@ AUDIO_FEATURE_ENABLED_USBAUDIO := true
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../device/samsung/j5-common/ril/
+TARGET_RIL_VARIANT := caf
 
 # PowerHAL
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
