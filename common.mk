@@ -328,6 +328,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapminfree=2m
 
+ADDITIONAL_BUILD_PROPERTIES += \
+    persist.gps.qc_nlp_in_use=1 \
+    ro.gps.agps_provider=1 \
+    ro.pip.gated=0
+
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
