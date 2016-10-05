@@ -63,7 +63,8 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvoiceprocessing \
+    libqcomvoiceprocessingdescriptors
 
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
@@ -128,8 +129,13 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libqomx_core \
     libmm-qcamera \
-    camera.msm8916
+    libmmcamera_interface \
+    libmmjpeg_interface \
+    camera.msm8916 \
+    mm-jpeg-interface-test \
+    mm-qcamera-app
 
 # GPS HAL
 PRODUCT_PACKAGES += \
@@ -137,6 +143,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
     libmm-omxcore \
     libOmxVidcCommon \
     libOmxVenc \
