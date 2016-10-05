@@ -28,8 +28,8 @@ LOCAL_SRC_FILES:= \
         src/mm_qcamera_reprocess.c\
         src/mm_qcamera_queue.c \
         src/mm_qcamera_socket.c \
-        src/mm_qcamera_commands.c
-        src/mm_qcamera_dual_test.c \
+        src/mm_qcamera_commands.c \
+        src/mm_qcamera_dual_test.c
 
 LOCAL_C_INCLUDES:=$(LOCAL_PATH)/inc
 LOCAL_C_INCLUDES+= \
@@ -136,8 +136,8 @@ LOCAL_SRC_FILES:= \
         src/mm_qcamera_reprocess.c\
         src/mm_qcamera_queue.c \
         src/mm_qcamera_socket.c \
-        src/mm_qcamera_commands.c
-        src/mm_qcamera_dual_test.c \
+        src/mm_qcamera_commands.c \
+        src/mm_qcamera_dual_test.c
 
 LOCAL_C_INCLUDES:=$(LOCAL_PATH)/inc
 LOCAL_C_INCLUDES+= \
