@@ -1209,6 +1209,24 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
+service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service usb_uicc_daemon /system/bin/usb_uicc_client
+    class main
+    user system
+    group system log net_raw
+    oneshot
+
+on property:sys.usb_uicc.enabled=1
+    start usb_uicc_enable
+
+on property:sys.usb_uicc.enabled=0
+    start usb_uicc_enable
+
 # virtual sdcard daemon running as media_rw (1023)
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
