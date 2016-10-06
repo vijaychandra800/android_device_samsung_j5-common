@@ -72,7 +72,6 @@ vendor/lib/libmmrtpencoder.so
 vendor/lib/libCommandSvc.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libFileMux.so
-vendor/lib/libfrsdk.so
 vendor/lib/libhwdaphal.so
 vendor/etc/msm_irqbalance.conf
 lib/libnvaccessor_fb.so
@@ -382,3 +381,7 @@ vendor/lib/libmmipstreamaal.so
 vendor/lib/libmmipstreamnetwork.so
 vendor/lib/libmmipstreamsourcehttp.so
 vendor/lib/libmmipstreamutils.so
+-app/TimeService/TimeService.apk
+-vendor/lib/libtime_genoff.so
+-vendor/lib/libmm-abl.so
+-vendor/lib/libHevcSwDecoder.so
