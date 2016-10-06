@@ -62,8 +62,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvisualizer
 
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
