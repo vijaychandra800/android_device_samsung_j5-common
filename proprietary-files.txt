@@ -370,6 +370,7 @@ lib/lib_DNSe_EP_ver216b.so
 lib/lib_DNSe_NRSS_ver230.so
 lib/libsamsungpowersound.so
 lib/libmysound.so
+lib/soundfx/libqcomvoiceprocessing.so
 lib/soundfx/libaudioeffectoffload.so
 lib/soundfx/libmyspace.so
 lib/libsoundalive.so
