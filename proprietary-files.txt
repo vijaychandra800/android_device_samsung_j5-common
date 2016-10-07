@@ -14,6 +14,8 @@ bin/imsdatadaemon
 bin/ims_rtp_daemon
 bin/imscmservice
 bin/fmconfig
+bin/fmfactorytest
+bin/fmfactorytestserver
 bin/fm_qsoc_patches
 bin/qseecomd
 bin/perfd
