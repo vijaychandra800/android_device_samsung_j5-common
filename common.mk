@@ -159,11 +159,11 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    FMRecord \
-    libqcomfm_jni \
-    qcom.fmradio
+#PRODUCT_PACKAGES += \
+#    FM2 \
+#    FMRecord \
+#    libqcomfm_jni \
+#    qcom.fmradio
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
