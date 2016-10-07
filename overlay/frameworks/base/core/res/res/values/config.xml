@@ -102,9 +102,8 @@
     <string name="config_ethernet_tcp_buffers" translatable="false">524288,1048576,3145728,524288,1048576,2097152</string>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
