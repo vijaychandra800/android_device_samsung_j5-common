@@ -743,8 +743,6 @@ on property:hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
 
 on property:hw.fm.init=1
-    chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
-    chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 on property:ro.use_data_netmgrd=false
