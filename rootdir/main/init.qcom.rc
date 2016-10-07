@@ -1077,6 +1077,7 @@ service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin net_bt_stack
+    seclabel u:r:bluetooth_loader:s0
     disabled
     oneshot
 
