@@ -64,6 +64,10 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
 # TinyAlsa utils
 PRODUCT_PACKAGES += \
     tinyplay \
