@@ -180,7 +180,8 @@ PRODUCT_PACKAGES += \
     init.qcom.coex.sh \
     init.qcom.fm.sh \
     init.qcom.uicc.sh \
-    init.qcom.wifi.sh
+    init.qcom.wifi.sh \
+    hcidump.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
