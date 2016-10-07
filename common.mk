@@ -226,8 +226,8 @@ PRODUCT_PACKAGES += \
     Stk
 
 # FM configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/fm_srch_af_th.conf:system/etc/fm/fm_srch_af_th.conf
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/fm_srch_af_th.conf:system/etc/fm/fm_srch_af_th.conf
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
