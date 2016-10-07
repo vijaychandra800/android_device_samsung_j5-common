@@ -1256,9 +1256,6 @@ service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
 service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
     class late_start
     group net_bt_admin inet radio wifi
-    disabledservice ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
-    class late_start
-    group net_bt_admin inet radio wifi
     disabled
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
