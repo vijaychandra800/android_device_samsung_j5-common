@@ -56,3 +56,7 @@ allow untrusted_app firmware_file:dir { read search };
 allow untrusted_app firmware_file:file getattr;
 allow untrusted_app efs_file:dir getattr;
 allow untrusted_app persist_file:dir getattr;
+allow untrusted_app ims_exec:file getattr;
+allow untrusted_app imscm_exec:file getattr;
+allow untrusted_app msm_irqbalanced_exec:file getattr;
+allow untrusted_app usb_uicc_daemon_exec:file getattr;
