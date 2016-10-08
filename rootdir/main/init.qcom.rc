@@ -733,10 +733,6 @@ on post-fs-data
 
     mkdir /data/diag_logs 0777 system system 5
 
-on property:ro.bootmode=charger
-    start rmt_storage
-    start rfs_access
-
 on property:sys.wfdservice=enable
     start wfdservice
 
