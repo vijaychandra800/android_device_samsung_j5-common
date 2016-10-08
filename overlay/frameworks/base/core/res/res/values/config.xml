@@ -18,12 +18,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
-    <bool name="config_ui_enableFadingMarquee">false</bool>
-
-    <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
-         Please don't copy them, copy anything else. -->
-
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
          based on the hardware -->
@@ -152,7 +146,7 @@
         <item>"bt-pan"</item>
     </string-array>
 
-     <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
+    <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
     <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
     <integer-array translatable="false" name="config_tether_upstream_types">
@@ -249,8 +243,6 @@
 
     <bool name="config_device_volte_available">true</bool>
     <bool name="config_carrier_volte_available">true</bool>
-    <bool name="config_carrier_volte_provisioned">false</bool>
-    <bool name="config_carrier_volte_tty_supported">true</bool>
     <bool name="config_device_vt_available">true</bool>
     <bool name="config_carrier_vt_available">true</bool>
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
@@ -265,10 +257,7 @@
     <bool name="config_dozeAfterScreenOff">true</bool>
     <bool name="config_dreamsSupported">true</bool>
     <bool name="config_dreamsEnabledByDefault">false</bool>
-    <bool name="config_dreamsActivatedOnDockByDefault">true</bool>
     <bool name="config_dreamsActivatedOnSleepByDefault">true</bool>
     <bool name="config_dreamsEnabledOnBattery">true</bool>
-    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">false</bool>
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 </resources>
