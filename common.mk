@@ -62,7 +62,8 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libqcompostprocbundle \
-    libqcomvisualizer
+    libqcomvisualizer \
+    libqcomvoiceprocessing
 
 # Bluetooth
 PRODUCT_PACKAGES += \
