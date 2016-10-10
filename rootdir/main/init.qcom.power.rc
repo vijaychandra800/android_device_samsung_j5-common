@@ -32,13 +32,13 @@ on enable-low-power
     # enable thermal core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
 
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "25000 1248000:50000"
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "25000 1363200:50000"
     write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 25000
-    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1094400
+    write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1248000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 0
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 50000
-    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "1 998400:85 1094400:90 1248000:80"
+    write /sys/devices/system/cpu/cpufreq/interactive/target_loads "1 1190400:85 1248000:90 1363200:80"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 50000
     write /sys/devices/system/cpu/cpufreq/interactive/sampling_down_factor 50000
 
