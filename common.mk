@@ -119,7 +119,7 @@ PRODUCT_BOOT_JARS += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.qcom
+    power.msm8916
 
 # Lights
 PRODUCT_PACKAGES += \
