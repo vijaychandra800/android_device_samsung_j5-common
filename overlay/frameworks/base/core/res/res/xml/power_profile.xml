@@ -26,6 +26,7 @@
         <value>1094400</value>
         <value>1190400</value>
         <value>1248000</value>
+        <value>1363200</value>
         <value>1401600</value>
     </array>
     <item name="cpu.idle">2</item>
@@ -41,6 +42,7 @@
         <value>176</value>
         <value>184</value>
         <value>193</value>
+        <value>201</value>
     </array>
     <item name="battery.capacity">2600</item>
 </device>
