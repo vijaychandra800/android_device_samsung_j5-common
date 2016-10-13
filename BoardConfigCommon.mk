@@ -106,13 +106,6 @@ WPA_SUPPLICANT_VERSION 		 := VER_0_8_X
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 
-WLAN_MODULES:
-	mkdir -p $(KERNEL_MODULES_OUT)/pronto
-	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/pronto/pronto_wlan.ko
-	ln -sf /system/lib/modules/pronto/pronto_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
-
-TARGET_KERNEL_MODULES += WLAN_MODULES
-
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
@@ -188,7 +181,7 @@ TW_TARGET_USES_QCOM_BSP := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Storage
-#RECOVERY_VARIANT := twrp
+RECOVERY_VARIANT := twrp
 #TARGET_RECOVERY_FSTAB := device/samsung/j5-common/recovery/twrp.fstab
 TARGET_RECOVERY_FSTAB := device/samsung/j5-common/rootdir/main/fstab.qcom
 TW_INTERNAL_STORAGE_PATH := "/data/media"
@@ -198,6 +191,18 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_MTP_DEVICE := "/dev/mtp_usb"
 BOARD_MTP_DEVICE := "/dev/mtp_usb"
 RECOVERY_SDCARD_ON_DATA := true
+
+# MultiROM
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/samsung/j5-common/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_FONT := 216
+MR_KEXEC_MEM_MIN := 0x85000000
+MR_FSTAB := device/samsung/j5-common/multirom/mrom.fstab
+MR_USE_MROM_FSTAB := true
+MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_CONTINUOUS_FB_UPDATE := true
 
 # Misc.
 BOARD_USES_MMC_UTILS := true
