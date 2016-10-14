@@ -821,9 +821,6 @@ on property:drmdiag.load=1
 on property:drmdiag.load=0
     stop drmdiag
 
-on property:sys.boot_completed=1
-    write /dev/kmsg "Boot completed "
-
 on property:vold.decrypt=trigger_restart_framework
     start config_bluetooth
 
@@ -1015,12 +1012,6 @@ service dpmd /system/bin/dpmd
 service hvdcp /system/bin/hvdcp
     class core
     user root
-    disabled
-
-service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class core
-    user root
-    group root
     disabled
 
 service profiler_daemon /system/bin/profiler_daemon
