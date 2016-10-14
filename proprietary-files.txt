@@ -3,7 +3,6 @@ bin/usbhub_init
 bin/usb_uicc_client
 bin/sapd
 bin/wdsdaemon
-bin/msm_irqbalance
 bin/dun-server
 bin/rmnetcli
 bin/ddexe
@@ -75,7 +74,6 @@ vendor/lib/libCommandSvc.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libFileMux.so
 vendor/lib/libhwdaphal.so
-vendor/etc/msm_irqbalance.conf
 lib/libnvaccessor_fb.so
 lib/libatomcore.so
 lib/libatomjpeg.so
