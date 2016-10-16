@@ -22,11 +22,11 @@ const char *mr_init_devices[] =
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p16", // boot
-    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p25", // cache
+    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p26", // cache
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p2", // modem
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p22", // persist
-    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p24", // system
-    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p27", // userdata
+    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p25", // system
+    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p28", // userdata
     "/sys/block/mmcblk0",
     "/sys/bus/mmc",
     "/sys/bus/mmc/drivers/mmcblk",
@@ -39,12 +39,12 @@ const char *mr_init_devices[] =
     "/sys/devices/soc.0/78b000.i2c/*",
 
     // sdcard
-    "/sys/devices/soc.0/7864900.sdhci/mmc_host/mmc1/mmc1:0007/block/mmcblk1",
-    "/sys/devices/soc.0/7864900.sdhci/mmc_host/mmc1/mmc1:0007/block/mmcblk1*",
+    "/sys/devices/soc.0/7864900.sdhci/mmc_host/mmc1/mmc1:aaaa/block/mmcblk1",
+    "/sys/devices/soc.0/7864900.sdhci/mmc_host/mmc1/mmc1:aaaa/block/mmcblk1*",
 
     // Input stuff
     "/sys/class/misc/uinput",
-    "/sys/devices/soc.0/gpio-keys.80/input*",
+    "/sys/devices/soc.0/gpio-keys.77/input*",
     "/sys/devices/virtual/misc/uinput",
 
     // USB-OTG
