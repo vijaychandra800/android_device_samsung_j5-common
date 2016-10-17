@@ -205,6 +205,7 @@ MR_FSTAB := device/samsung/j5-common/multirom/mrom.fstab
 MR_USE_MROM_FSTAB := true
 MR_CONTINUOUS_FB_UPDATE := true
 MR_NO_KEXEC := 4
+MR_KEXEC_DTB := true
 
 # Misc.
 BOARD_USES_MMC_UTILS := true
