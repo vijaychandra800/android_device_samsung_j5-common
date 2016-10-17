@@ -49,6 +49,10 @@ const char *mr_init_devices[] =
 
     // USB-OTG
     "/sys/devices/platform/msm_hsusb_host*",
+    
+    // Logging
+    "/sys/devices/virtual/pmsg/pmsg0",
+    "/sys/devices/virtual/mem/kmsg",
 
  NULL
 };
