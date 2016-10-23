@@ -81,14 +81,14 @@ import java.util.Random;
 
 
 /**
- * RIL customization for Samsung A5/A3 devices
+ * RIL customization for Samsung J5 devices
  *
  * {@hide}
  */
-public class SamsungA5RIL extends RIL implements CommandsInterface {
+public class J5RIL extends RIL implements CommandsInterface {
 
     private static final int RIL_REQUEST_DIAL_EMERGENCY = 10016;
-    private static final int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 1037;
+    private static final int RIL_UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED = 1036;
     private static final int RIL_UNSOL_DEVICE_READY_NOTI = 11008;
     private static final int RIL_UNSOL_AM = 11010;
     private static final int RIL_UNSOL_WB_AMR_STATE = 11017;
@@ -99,19 +99,21 @@ public class SamsungA5RIL extends RIL implements CommandsInterface {
 
     private AudioManager mAudioManager;
 
-    public SamsungA5RIL(Context context, int preferredNetworkType, int cdmaSubscription) {
-        this(context, preferredNetworkType, cdmaSubscription, null);
+    public J5RIL(Context context, int networkMode, int cdmaSubscription,Integer instanceId) {
+        super(context, networkMode, cdmaSubscription,  instanceId);
+        mAudioManager = (AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
+        mQANElements = 6;
     }
 
-    public SamsungA5RIL(Context context, int preferredNetworkType,
-            int cdmaSubscription, Integer instanceId) {
-        super(context, preferredNetworkType, cdmaSubscription, instanceId);
-        mAudioManager = (AudioManager)mContext.getSystemService(Context.AUDIO_SERVICE);
-    }
 
     @Override
     public void
     dial(String address, int clirMode, UUSInfo uusInfo, Message result) {
+        if (PhoneNumberUtils.isEmergencyNumber(address)) {
+            dialEmergencyCall(address, clirMode, result);
+            return;
+        }
+
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_DIAL, result);
 
         rr.mParcel.writeString(address);
@@ -411,17 +413,35 @@ public class SamsungA5RIL extends RIL implements CommandsInterface {
                 }
                 break;
 
-			default:
-		        if (newResponse != response) {
-		              p.setDataPosition(dataPosition);
-		              p.writeInt(newResponse);
-		        }
-			    p.setDataPosition(dataPosition);
-				super.processUnsolicited(p);
-				return;
-		}
+	    default:
+             if (newResponse != response) {
+                  p.setDataPosition(dataPosition);
+                  p.writeInt(newResponse);
+            }
+	        p.setDataPosition(dataPosition);
+    		super.processUnsolicited(p);
+    		return;
+	}
     }
 
+
+    private void
+    dialEmergencyCall(String address, int clirMode, Message result) {
+        RILRequest rr;
+        Rlog.v(RILJ_LOG_TAG, "Emergency dial: " + address);
+
+        rr = RILRequest.obtain(RIL_REQUEST_DIAL_EMERGENCY, result);
+        rr.mParcel.writeString(address + "/");
+        rr.mParcel.writeInt(clirMode);
+        rr.mParcel.writeInt(0);        // CallDetails.call_type
+        rr.mParcel.writeInt(3);        // CallDetails.call_domain
+        rr.mParcel.writeString("");    // CallDetails.getCsvFromExtra
+        rr.mParcel.writeInt(0);        // Unknown
+
+        if (RILJ_LOGD) riljLog(rr.serialString() + "> " + requestToString(rr.mRequest));
+
+        send(rr);
+    }
 
     private void logParcel(Parcel p) {
         StringBuffer s = new StringBuffer();
@@ -459,21 +479,4 @@ public class SamsungA5RIL extends RIL implements CommandsInterface {
         }
     }
 
-    protected Object
-    responseFailCause(Parcel p) {
-        int numInts;
-        int response[];
-
-        numInts = p.readInt();
-        response = new int[numInts];
-        for (int i = 0 ; i < numInts ; i++) {
-            response[i] = p.readInt();
-        }
-        LastCallFailCause failCause = new LastCallFailCause();
-        failCause.causeCode = response[0];
-        if (p.dataAvail() > 0) {
-          failCause.vendorCause = p.readString();
-        }
-        return failCause;
-    }
 }
