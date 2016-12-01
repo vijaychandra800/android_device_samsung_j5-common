@@ -272,7 +272,6 @@
     <bool name="config_device_vt_available">true</bool>
     <bool name="config_carrier_vt_available">true</bool>
     <bool translatable="false" name="config_sms_decode_gsm_8bit_data">true</bool>
-    <bool name="config_feature_iwlan_enabled">true</bool>
     <string name="config_mms_user_agent">Android-Mms/2.0</string>
     <string name="config_mms_user_agent_profile_url">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
 </resources>
