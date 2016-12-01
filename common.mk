@@ -20,9 +20,6 @@ $(call inherit-product-if-exists, vendor/samsung/j5-common/j5-common-vendor.mk)
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5-common/overlay
 
-# Screen density
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
