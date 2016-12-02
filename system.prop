@@ -14,6 +14,9 @@ ril.subscription.types=NV,RUIM
 persist.call_recording.enabled=true
 persist.call_recording.src=4
 
+#VoLTE/IMS
+persist.radio.jbims=1
+
 # Netmgrd
 ro.use_data_netmgrd=false
 persist.data.netmgrd.qos.enable=false
@@ -81,6 +84,14 @@ mm.enable.qcom_parser=3183219
 wifi.interface=wlan0
 ro.qualcomm.bt.hci_transport=smd
 bluetooth.hfp.client=1
+
+# GPS
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+ro.qc.sdk.izat.premium_enabled=0
+ro.qc.sdk.izat.service_mask=0x0
+ro.gps.agps_provider=1
+ro.pip.gated=0
 
 # Misc.
 ro.chipname=MSM8916
