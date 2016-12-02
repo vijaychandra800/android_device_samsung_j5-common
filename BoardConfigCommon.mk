@@ -131,6 +131,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
 
+# non-static liblog
+BOARD_LIBCUTILS_NO_STATIC_LIBLOG := true
+
 # Qcom
 TARGET_USES_NEW_ION_API := true
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
