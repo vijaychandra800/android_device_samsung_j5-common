@@ -69,6 +69,8 @@ on fs
     chmod 0666 /dev/i2c-1
     chown system system /dev/i2c-1
 
+    setprop vold.post_fs_data_done 1
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -576,7 +578,6 @@ on post-fs-data
     chmod 0775 /efs/.files/.dm33
     chmod 0775 /efs/.files/.mp301
 
-    setprop vold.post_fs_data_done 1
     mkdir /data/diag_logs 0777 system system 5
 
 service netmgrd /system/bin/netmgrd
@@ -754,12 +755,12 @@ service perfd /system/vendor/bin/perfd
    disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
-   class core
+   class main
+   user root
    seclabel u:r:thermal-engine:s0
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
-   user root
    group root
 
 service time_daemon /system/bin/time_daemon
