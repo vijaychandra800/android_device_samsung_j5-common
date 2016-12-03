@@ -49,6 +49,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libril_shim
 
+# Widevine
+PRODUCT_PACKAGES += \
+    libshim_wvm
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
