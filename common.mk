@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 
 # Samsung libril shim library
 PRODUCT_PACKAGES += \
-    libril_shim
+    libshim_ril
 
 # Audio
 PRODUCT_PACKAGES += \
