@@ -94,7 +94,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap \
     libmm-qcamera \
+    libbson \
     camera.msm8916
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # GPS HAL
 PRODUCT_PACKAGES += \
@@ -175,10 +180,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2 \
     Stk
-
-# Misc libs
-PRODUCT_PACKAGES += \
-    libboringssl-compat
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
