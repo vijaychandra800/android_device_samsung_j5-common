@@ -136,8 +136,11 @@ public class J5RIL extends RIL implements CommandsInterface {
         }
         cardStatus.mApplications = new IccCardApplicationStatus[numApplications];
 
+        appStatus = new IccCardApplicationStatus();
         for (int i = 0 ; i < numApplications ; i++) {
-            appStatus = new IccCardApplicationStatus();
+            if (i!=0) {
+                 appStatus = new IccCardApplicationStatus();
+             }
             appStatus.app_type       = appStatus.AppTypeFromRILInt(p.readInt());
             appStatus.app_state      = appStatus.AppStateFromRILInt(p.readInt());
             appStatus.perso_substate = appStatus.PersoSubstateFromRILInt(p.readInt());
