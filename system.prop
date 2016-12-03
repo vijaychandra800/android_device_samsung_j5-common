@@ -112,6 +112,9 @@ ro.chipname=MSM8916
 ro.warmboot.capability=1
 ro.qualcomm.cabl=2
 
+# Storage
+ro.sys.sdcardfs=true
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
