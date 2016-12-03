@@ -171,18 +171,7 @@ on boot
     write /proc/sys/net/ipv6/conf/rmnet5/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet6/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
 
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
@@ -550,14 +539,6 @@ on post-fs-data
     chmod 0644 /efs/cpk/h2k.dat
     chown system system /efs/drm/h2k
 
-    # icd
-    check_icd
-    chown system system /dev/icd
-    chmod 0644 /dev/icd
-    chown system system /dev/icdr
-    chmod 0644 /dev/icdr
-    chown system system /dev/tzic
-
     # drm and related files in EFS
     mkdir /efs/drm 0774 drm system
     mkdir /efs/drm/sdrm 0774 drm system
@@ -579,13 +560,6 @@ on post-fs-data
     chmod 0775 /efs/.files/.mp301
 
     mkdir /data/diag_logs 0777 system system 5
-
-service netmgrd /system/bin/netmgrd
-    class main
-    disabled
-
-on property:ro.use_data_netmgrd=false
-    stop netmgrd
 
 on property:bluetooth.isEnabled=true
     write /sys/class/bluetooth/hci0/idle_timeout 7000
