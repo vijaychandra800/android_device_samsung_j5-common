@@ -225,9 +225,6 @@ TW_NO_USB_STORAGE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 BOARD_RECOVERY_SWIPE := true
 
-# Memory allocator
-MALLOC_IMPL := dlmalloc
-
 # Dex
 WITH_DEXPREOPT := false
 DISABLE_DEXPREOPT := true
