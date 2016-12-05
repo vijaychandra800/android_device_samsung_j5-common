@@ -1,2 +1,1 @@
 allow netd self:capability fsetid;
-allow netd hosts_data_file:file { read getattr open };
