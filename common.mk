@@ -299,7 +299,6 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.data.netmgrd.qos.enable=false \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
