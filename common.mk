@@ -86,32 +86,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libtinyxml
 
-PRODUCT_PACKAGES += \
-    ethernet-service \
-    voip-common \
-    ims-common \
-    imsmanager \
-    commonimsinterface \
-    tcmiface \
-    WfdCommon \
-    oem-services \
-    okhttp \
-    libqmi \
-    libqmiservices \
-    libidl \
-    libqcci_legacy \
-    org.codeaurora.Performance
-
 # Media
 PRODUCT_PACKAGES += \
     qcmediaplayer \
     libdashplayer
-
-PRODUCT_BOOT_JARS += \
-    qcom.fmradio
-
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
 
 # Power
 PRODUCT_PACKAGES += \
@@ -171,13 +149,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.crda.sh \
     init.qcom.bt.sh \
-    init.ath3k.bt.sh \
-    hsic.control.bt.sh \
     init.qcom.coex.sh \
-    init.qcom.fm.sh \
-    init.qcom.uicc.sh \
-    init.qcom.wifi.sh \
-    hcidump.sh
+    init.qcom.fm.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -336,20 +309,14 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # ETC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=J5RIL \
-    ro.telephony.call_ring.multiple=false \
-    ro.data.large_tcp_window_size=true \
-    dalvik.vm.heapgrowthlimit=128m \
-    dalvik.vm.heapminfree=2m
+    ro.telephony.ril_class=J5RIL
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
-    $(LOCAL_PATH)/recovery/parted:recovery/root/sbin/parted \
-    $(LOCAL_PATH)/recovery/parted:system/bin/parted
+    $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Common qcom
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
