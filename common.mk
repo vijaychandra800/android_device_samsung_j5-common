@@ -299,10 +299,6 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    telephony.lteOnCdmaDevice=0 \
-    camera2.portability.force_api=1 \
-    persist.cne.feature=0 \
-    persist.radio.lte_vrte_ltd=1 \
     persist.data.netmgrd.qos.enable=false \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
