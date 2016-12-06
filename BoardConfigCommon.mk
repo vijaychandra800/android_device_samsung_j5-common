@@ -44,7 +44,7 @@ TARGET_USE_SDCLANG := true
 # Kernel
 TARGET_KERNEL_ARCH           := arm
 BOARD_DTBTOOL_ARG            := -2
-BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE         := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_BASE            := 0x80000000
 BOARD_KERNEL_OFFSET          := 0x00008000
 BOARD_RAMDISK_OFFSET         := 0x02000000
@@ -72,7 +72,7 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
 AUDIO_FEATURE_ENABLED_HFP := true
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
-AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+#AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
 #AUDIO_FEATURE_ENABLED_PCM_OFFLOAD := true
