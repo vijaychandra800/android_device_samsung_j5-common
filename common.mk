@@ -41,9 +41,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.webview.xml:system/etc/permissions/android.software.webview.xml
 
-# Samsung libril shim library
+# Shims
 PRODUCT_PACKAGES += \
-    libshim_ril
+    libshim_ril \
+    libshim_wvm
 
 # Audio
 PRODUCT_PACKAGES += \
