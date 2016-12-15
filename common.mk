@@ -277,6 +277,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=false \
     telephony.lteOnCdmaDevice=0 \
     persist.sys.usb.config=mtp \
+    camera2.portability.force_api=1 \
     persist.sys.isUsbOtgEnabled=true
 
 # Recovery
