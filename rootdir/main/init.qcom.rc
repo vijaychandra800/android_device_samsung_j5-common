@@ -43,8 +43,6 @@ on early-init
     symlink /data/tombstones /tombstones
 
 on init
-    export LD_SHIM_LIBS "/system/lib/libril.so|libril_shim.so /system/vendor/lib/libqc-opt.so|libshim_qcopt.so"
-
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
@@ -80,6 +78,7 @@ on early-boot
     write /sys/module/pil_msa/parameters/modem_auth_timeout_ms ${persist.sys.modem_auth_timeout}
     write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
+    chown root audio /sys/kernel/boot_adsp/boot
     setprop qcom.audio.init complete
 
 on boot
@@ -582,6 +581,10 @@ on post-fs-data
 
 service netmgrd /system/bin/netmgrd
     class main
+    disabled
+
+on property:ro.use_data_netmgrd=true
+    start netmgrd
 
 on property:ro.use_data_netmgrd=false
     stop netmgrd
@@ -641,7 +644,8 @@ on property:bluetooth.hciattach=false
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps nfc qcom_diag
+    disabled
 
 service qmiproxy /system/bin/qmiproxy
     class main
@@ -810,6 +814,9 @@ service thermal-engine /vendor/bin/thermal-engine
    class core
    seclabel u:r:thermal-engine:s0
    user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
    group root
 
 service time_daemon /system/bin/time_daemon
@@ -827,16 +834,34 @@ service wcnss-service /system/bin/wcnss_service
     user system
     group system wifi radio
 
-# Dual-sim support
-on property:persist.radio.multisim.config=dsds
+#
+# start ril-daemon only for targets on which radio is present
+#
+on property:ro.radio.noril=yes
     stop ril-daemon
-    start ril-daemon
-    start ril-daemon1
 
-on property:ro.multisim.simslotcount=2
+on property:ro.baseband=apq
+    setprop ro.radio.noril yes
     stop ril-daemon
-    start ril-daemon
-    start ril-daemon1
+#
+# start qmuxd and qmiproxy for appropriate targets
+#
+on property:ro.baseband=msm
+    start qmuxd
+
+on property:ro.baseband=mdm
+    start qmuxd
+
+on property:ro.baseband=unknown
+    start qmuxd
+
+#
+# start multiple rilds based on multisim property
+#
+#on property:ro.multisim.simslotcount=2
+#    stop ril-daemon
+#    start ril-daemon
+#    start ril-daemon1
 
 service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
     class main
@@ -845,6 +870,22 @@ service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
     user root
     disabled
     group radio cache inet misc audio log qcom_diag system drmrpc sdcard_r sdcard_rw shell
+
+service ril-daemon2 /system/bin/rild -c 2
+    class main
+    socket rild2 stream 660 root radio
+    socket rild-debug2 stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag log
+
+service ril-daemon3 /system/bin/rild -c 3
+    class main
+    socket rild3 stream 660 root radio
+    socket rild-debug3 stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag log
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
