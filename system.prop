@@ -64,20 +64,9 @@ audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 
 # Media
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-media.msm8939hw=0
-media.msm8929hw=0
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-
-# system property for PIP support
-persist.camera.pip.support=0
 
 # Wi-Fi, Bluetooth
 wifi.interface=wlan0

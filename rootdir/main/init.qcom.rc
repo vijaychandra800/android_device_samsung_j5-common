@@ -82,7 +82,7 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     #chown root audio /sys/kernel/boot_adsp/boot
     setprop qcom.audio.init complete
-    setprop service.qti.ims.enabled 1
+    #setprop service.qti.ims.enabled 1
 
 on boot
     # Bluetooth
@@ -856,6 +856,11 @@ service wcnss-service /system/bin/wcnss_service
 # start multiple rilds based on multisim property
 #
 on property:ro.multisim.simslotcount=2
+    stop ril-daemon
+    start ril-daemon
+    start ril-daemon1
+
+on property:persist.radio.multisim.config=dsds
     stop ril-daemon
     start ril-daemon
     start ril-daemon1
