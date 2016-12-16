@@ -645,7 +645,45 @@ on property:bluetooth.hciattach=false
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps qcom_diag
+    group radio audio bluetooth gps nfc qcom_diag
+    disabled
+
+service qmiproxy /system/bin/qmiproxy
+    class main
+    user radio
+    group radio qcom_diag
+    disabled
+
+service ipacm-diag /system/bin/ipacm-diag
+    class main
+    user system
+    socket ipacm_log_file dgram 660 system net_admin
+    group net_admin qcom_diag
+    disabled
+
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
+    disabled
+
+service qti /system/vendor/bin/qti
+    class main
+    user radio
+    group radio net_raw qcom_diag usb net_admin
+    disabled
+
+service bridgemgrd /system/bin/bridgemgrd
+    class late_start
+    user radio
+    group radio qcom_diag
+    disabled
+
+service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
+    class main
+    user radio system
+    group radio system inet
+    disabled
 
 service qmiproxy /system/bin/qmiproxy
     class main
@@ -843,6 +881,24 @@ on property:ro.radio.noril=yes
 on property:ro.baseband=apq
     setprop ro.radio.noril yes
     stop ril-daemon
+
+#
+# start qmuxd and qmiproxy for appropriate targets
+#
+on property:ro.baseband=msm
+    start qmuxd
+    start ipacm-diag
+    start ipacm
+
+on property:ro.baseband=mdm
+    start qmuxd
+    start ipacm-diag
+    start ipacm
+
+on property:ro.baseband=unknown
+    start qmuxd
+    start ipacm-diag
+    start ipacm
 
 #
 # start multiple rilds based on multisim property
