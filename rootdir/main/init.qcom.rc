@@ -644,8 +644,7 @@ on property:bluetooth.hciattach=false
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps nfc qcom_diag
-    disabled
+    group radio audio bluetooth gps qcom_diag
 
 service qmiproxy /system/bin/qmiproxy
     class main
@@ -843,17 +842,6 @@ on property:ro.radio.noril=yes
 on property:ro.baseband=apq
     setprop ro.radio.noril yes
     stop ril-daemon
-#
-# start qmuxd and qmiproxy for appropriate targets
-#
-on property:ro.baseband=msm
-    start qmuxd
-
-on property:ro.baseband=mdm
-    start qmuxd
-
-on property:ro.baseband=unknown
-    start qmuxd
 
 #
 # start multiple rilds based on multisim property
