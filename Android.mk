@@ -61,6 +61,19 @@ $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(ISDB_SYMLINKS)
 
+# Keymaster
+KM_IMAGES := \
+    keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt
+
+KM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/keymaster/,$(notdir $(KM_IMAGES)))
+$(KM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Keymaster firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(subst r,,$(notdir $@)) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(KM_SYMLINKS)
+
 # Kiwi
 KW_IMAGES := \
     kiwi.b00 kiwi.b01 kiwi.b02 kiwi.b03 kiwi.mdt
