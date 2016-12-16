@@ -175,6 +175,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite \
+    libril_shim \
     libstlport
 
 # Audio configuration
