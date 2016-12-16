@@ -80,6 +80,7 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     #chown root audio /sys/kernel/boot_adsp/boot
     setprop qcom.audio.init complete
+    setprop service.qti.ims.enabled 1
 
 on boot
     # Bluetooth
