@@ -73,8 +73,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-    libc2dcolorconvert \
-    librs_jni \
     libtinyxml
 
 # Power
@@ -101,10 +99,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
     libextmedia_jni \
-    libqcmediaplayer \
-    libdashplayer \
+    libqcmediaplayer
     libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
