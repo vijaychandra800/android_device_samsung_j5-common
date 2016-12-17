@@ -14,8 +14,6 @@ persist.radio.lte_vrte_ltd=1
 telephony.lteOnCdmaDevice=0
 ro.telephony.default_network=9
 ril.subscription.types=NV,RUIM
-ro.ril.telephony.mqanelements=6
-ro.telephony.ril.config=simactivation
 
 # Data modules
 ro.use_data_netmgrd=false
@@ -41,7 +39,7 @@ debug.egl.hw=1
 dev.pm.dyn_samplingrate=1
 debug.mdpcomp.idletime=600
 debug.mdpcomp.logs=0
-dalvik.vm.heapsize=36m
+#dalvik.vm.heapsize=36m
 ro.sf.lcd_density=320
 persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196608
@@ -65,10 +63,6 @@ ro.qc.sdk.audio.ssr=false
 use.voice.path.for.pcm.voip=true
 tunnel.audio.encode=false
 ro.fm.transmitter=false
-audio.dolby.ds2.enabled=true
-voice.playback.conc.disabled=true
-voice.record.conc.disabled=true
-voice.voip.conc.disabled=true
 #audio.offload.pcm.16bit.enable=true
 #audio.offload.pcm.24bit.enable=true
 
@@ -96,8 +90,6 @@ bluetooth.hfp.client=1
 ro.chipname=MSM8916
 ro.warmboot.capability=1
 ro.qualcomm.cabl=2
-persist.android.strictmode=0
-persist.sys.strictmode.disable=true
 
 # GPS
 persist.gps.qc_nlp_in_use=1
@@ -105,7 +97,6 @@ persist.loc.nlp_name=com.qualcomm.location
 ro.qc.sdk.izat.premium_enabled=0
 ro.qc.sdk.izat.service_mask=0x0
 ro.gps.agps_provider=1
-ro.pip.gated=0
 
 # WFD
 persist.debug.wfd.enable=1
@@ -114,9 +105,6 @@ persist.hwc.enable_vds=1
 
 # Time
 persist.timed.enable=true
-
-# set max background services
-ro.config.max_starting_bg=8
 
 # Art
 ro.sys.fw.dex2oat_thread_count=4
