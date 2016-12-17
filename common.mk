@@ -77,13 +77,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-    libqdutils \
-    libqdMetaData \
-    liboverlay \
-    libqservice \
-    libhdmi \
-    librs_jni \
-    libgenlock \
     libtinyxml
 
 # Media
@@ -105,13 +98,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libqomx_core \
-    libmm-qcamera \
-    libmmcamera_interface \
-    libmmjpeg_interface \
-    camera.msm8916 \
-    mm-jpeg-interface-test \
-    mm-qcamera-app
+    libmm-qcamera
+    camera.msm8916
 
 # GPS HAL
 PRODUCT_PACKAGES += \
@@ -119,8 +107,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libmm-omxcore \
     libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
@@ -182,11 +168,6 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
-# BoringSSL compatability wrapper
-PRODUCT_PACKAGES += \
-    libboringssl-compat \
-    libstlport
-
 # Misc
 PRODUCT_PACKAGES += \
     libxml2 \
@@ -241,15 +222,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/configs/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/configs/somxreg.conf:system/etc/somxreg.conf
-
-# Data Profiles
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
-    $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml \
-    $(LOCAL_PATH)/configs/qmi_config.xml:system/etc/data/qmi_config.xml \
-    $(LOCAL_PATH)/configs/nwk_info.xml:system/etc/nwk_info.xml
+    $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf
 
 # Alsa
 PRODUCT_COPY_FILES += \
