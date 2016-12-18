@@ -36,7 +36,6 @@ debug.sf.hw=1
 debug.egl.hw=1
 dev.pm.dyn_samplingrate=1
 debug.mdpcomp.idletime=600
-#dalvik.vm.heapsize=36m
 ro.sf.lcd_density=320
 persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196608
@@ -47,8 +46,8 @@ debug.enable.sglscale=1
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Audio
-af.resampler.quality=4
 audio.offload.video=true
+av.streaming.offload.enable=true
 audio.offload.min.duration.secs=30
 audio.offload.buffer.size.kb=64
 audio.offload.gapless.enabled=true
@@ -56,7 +55,6 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 ro.qc.sdk.audio.fluencetype=none
-ro.qc.sdk.audio.ssr=false
 use.voice.path.for.pcm.voip=true
 tunnel.audio.encode=false
 ro.fm.transmitter=false
