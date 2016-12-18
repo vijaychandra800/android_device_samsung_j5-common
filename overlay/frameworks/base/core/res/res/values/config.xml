@@ -277,11 +277,8 @@
     <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
 
-    <!-- Enable dreams. -->
-    <bool name="config_dreamsSupported">true</bool>
-    <bool name="config_dreamsEnabledByDefault">false</bool>
-    <bool name="config_dreamsActivatedOnSleepByDefault">true</bool>
-    <bool name="config_dreamsEnabledOnBattery">true</bool>
+    <!-- Disable dreams. -->
+    <bool name="config_dreamsSupported">false</bool>
 
     <!-- Ambient display. -->
     <integer name="config_screenBrightnessDoze">30</integer>
