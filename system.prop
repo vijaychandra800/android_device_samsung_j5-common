@@ -13,6 +13,8 @@ persist.radio.lte_vrte_ltd=1
 telephony.lteOnCdmaDevice=0
 ro.telephony.default_network=9
 ril.subscription.types=NV,RUIM
+ro.ril.telephony.mqanelements=6
+ro.telephony.ril.config=simactivation
 
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
