@@ -280,15 +280,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Default property overrides
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libsec-ril.so \
-    persist.cne.feature=0 \
-    persist.radio.lte_vrte_ltd=1 \
-    persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.add_power_save=1 \
-    persist.data.netmgrd.qos.enable=false \
-    telephony.lteOnCdmaDevice=0 \
     persist.sys.usb.config=mtp \
-    camera2.portability.force_api=1 \
     persist.sys.isUsbOtgEnabled=true
 
 # Recovery
