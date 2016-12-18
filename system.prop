@@ -64,6 +64,7 @@ audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 
 # Media
+camera2.portability.force_api=1
 mm.enable.smoothstreaming=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
