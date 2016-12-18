@@ -89,6 +89,11 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
+    libqomx_core \
+    libmmcamera_interface \
+    libmmjpeg_interface \
+    mm-jpeg-interface-test \
+    mm-qcamera-app \
     libmm-qcamera \
     camera.msm8916
 
@@ -103,6 +108,8 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
+    libOmxVdecHevc \
+    libmm-omxcore \
     libOmxCore \
     libOmxAacEnc \
     libOmxAmrEnc \
