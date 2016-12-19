@@ -287,7 +287,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Default property overrides
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1 \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
