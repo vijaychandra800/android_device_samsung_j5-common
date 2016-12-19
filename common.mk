@@ -280,7 +280,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=J5RIL
+    ro.telephony.ril_class=J5RIL \
+    camera2.portability.force_api=1
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
