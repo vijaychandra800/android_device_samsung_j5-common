@@ -88,7 +88,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
