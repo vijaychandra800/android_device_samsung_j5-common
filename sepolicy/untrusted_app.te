@@ -61,3 +61,6 @@ allow untrusted_app ims_exec:file getattr;
 allow untrusted_app imscm_exec:file getattr;
 allow untrusted_app msm_irqbalanced_exec:file getattr;
 allow untrusted_app usb_uicc_daemon_exec:file getattr;
+allow untrusted_app block_device:dir { read open };
+allow untrusted_app zygote:dir search;
+allow untrusted_app zygote:file { read open };
