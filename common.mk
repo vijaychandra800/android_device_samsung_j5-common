@@ -89,8 +89,12 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
+    camera.msm8916 \
     libmm-qcamera \
-    camera.msm8916
+    libmmjpeg_interface \
+    libmmcamera_interface \
+    libmm-omxcore \
+    libqomx_core
 
 # GPS HAL
 PRODUCT_PACKAGES += \
@@ -100,12 +104,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libextmedia_jni \
     libqcmediaplayer \
-    libdashplayer \
     libOmxVidcCommon \
     libOmxVenc \
     libOmxVdec \
-    libOmxVdecHevc \
-    libmm-omxcore \
     libOmxCore \
     libOmxAacEnc \
     libOmxAmrEnc \

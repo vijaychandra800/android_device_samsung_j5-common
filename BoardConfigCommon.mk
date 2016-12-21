@@ -118,7 +118,7 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_VOLD_MAX_PARTITIONS := 65
 
 # Camera
-TARGET_PROVIDES_CAMERA_HAL := true
+#TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
