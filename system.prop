@@ -62,6 +62,10 @@ ro.qc.sdk.audio.ssr=false
 use.voice.path.for.pcm.voip=true
 tunnel.audio.encode=false
 ro.fm.transmitter=false
+voice.playback.conc.disabled=true
+voice.record.conc.disabled=true
+voice.voip.conc.disabled=true
+audio.dolby.ds2.enabled=true
 
 persist.audio.calfile0=/etc/Bluetooth_cal.acdb
 persist.audio.calfile1=/etc/General_cal.acdb
