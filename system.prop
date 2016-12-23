@@ -76,11 +76,6 @@ audio.dolby.ds2.enabled=true
 audio.offload.pcm.16bit.enable=true
 audio.offload.pcm.24bit.enable=true
 
-# Camera
-persist.camera.pip.support=0
-camera.disable_zsl_mode=1
-persist.camera.cpp.duplication=false
-
 # Media
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
