@@ -168,8 +168,6 @@ PRODUCT_PACKAGES += \
 
 # Misc libs
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    libprotobuf-cpp-lite \
     libril_shim
 
 # Audio configuration
