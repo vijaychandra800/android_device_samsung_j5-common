@@ -90,11 +90,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap \
     camera.msm8916 \
-    libmm-qcamera \
-    libmmjpeg_interface \
-    libmmcamera_interface \
-    libmm-omxcore \
-    libqomx_core
+    libmm-qcamera
 
 # GPS HAL
 PRODUCT_PACKAGES += \
