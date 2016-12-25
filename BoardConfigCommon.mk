@@ -123,6 +123,9 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
+# Reference for Gralloc. In case the above do not work, we try those too.
+# TARGET_USE_COMPAT_GRALLOC_ALIGN := true
+# TARGET_USE_COMPAT_GRALLOC_PERFORM := true
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
