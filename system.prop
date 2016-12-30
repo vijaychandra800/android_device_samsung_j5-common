@@ -50,9 +50,6 @@ persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196608
 vidc.enc.narrow.searchrange=1
 
-# Camera
-camera2.portability.force_api=1
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
