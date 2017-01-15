@@ -90,6 +90,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap \
     camera.msm8916 \
+    libboringssl-compat \
     libmm-qcamera
 
 # GPS HAL
