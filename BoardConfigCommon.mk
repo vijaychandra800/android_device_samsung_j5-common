@@ -144,7 +144,7 @@ TARGET_USES_NEW_ION_API := true
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 TARGET_USES_QCOM_BSP := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
+TARGET_GLOBAL_CFLAGS += -DQCOM_BSP
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Added to indicate that protobuf-c is supported in this build
