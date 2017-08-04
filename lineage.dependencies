@@ -8,8 +8,8 @@
     "target_path": "device/samsung/qcom-common"
   },
   {
-    "repository": "kernel_samsung_j5lte",
-    "target_path": "kernel/samsung/j5lte"
+    "repository": "kernel_samsung_o7lte",
+    "target_path": "kernel/samsung/o7lte"
   },
   {
     "repository": "android_external_stlport",
