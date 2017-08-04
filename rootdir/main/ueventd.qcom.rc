@@ -49,7 +49,7 @@
 /dev/dpl_ctrl             0660   usb        usb
 
 #permissions for CSVT
-/dev/smd11                0660   radio      radio
+/dev/smd11                0660   system	    loop_radio
 
 /dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
@@ -213,7 +213,6 @@
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
 #nfc permissions
-/dev/pn547                0660    nfc         nfc
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
@@ -237,9 +236,6 @@
 /dev/hbtp_vm              0660   system     system
 /dev/jdi-bu21150          0660   system     system
 
-#latin Mobile TV
-/dev/isdbt                0660   system     system
-
 #cpufreq_governor
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/above_hispeed_delay    0660  system system
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/go_hispeed_load        0660  system system
@@ -252,3 +248,5 @@
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/lpm_disable_freq       0660  system system
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/use_migration_notif    0660  system system
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/use_sched_load         0660  system system
+# Add device block for FRP
+/dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system
