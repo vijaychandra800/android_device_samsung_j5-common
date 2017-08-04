@@ -15,10 +15,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/j5-common/j5-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/o7lte/o7lte-vendor.mk)
 
 # Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/j5-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/o7lte/overlay
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
